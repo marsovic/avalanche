@@ -1,0 +1,7 @@
+.VideoPlayer {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 0;
+    background-color: black;
+}

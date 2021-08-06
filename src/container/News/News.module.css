@@ -1,0 +1,38 @@
+.News {
+  height: 40vh;
+  margin-top: 17vh;
+  margin-left: 10px;
+  position: relative;
+}
+
+.Title {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 16px;
+  font-family: "Monument Extended Ultrabold";
+  color: white;
+  font-size:x-large;
+  text-decoration: none;
+}
+
+.Project {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 16px;
+    font-family: "Monument Extended Regular";
+    color: white;
+    text-decoration: none;
+    font-size: small;
+    align-items: left;
+}
+
+.Project a{
+    font-family: "Monument Extended Regular";
+    color: white;
+    text-decoration: none;
+}
+
+.Project a:hover {
+    font-family: "Monument Extended Ultrabold";
+}
+
