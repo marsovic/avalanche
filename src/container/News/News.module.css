@@ -1,38 +1,61 @@
 .News {
   height: 40vh;
   margin-top: 17vh;
-  margin-left: 10px;
+  margin-left: 50px;
   position: relative;
 }
 
 .Title {
-  padding-left: 50px;
   padding-right: 50px;
   padding-top: 16px;
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-size:x-large;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .Project {
-    padding-left: 50px;
     padding-right: 50px;
     padding-top: 16px;
-    font-family: "Monument Extended Regular";
-    color: white;
+    width: fit-content;
+    color: gray;
     text-decoration: none;
-    font-size: small;
+    text-transform: uppercase;
+    font-size:medium;
     align-items: left;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 50;
 }
 
-.Project a{
-    font-family: "Monument Extended Regular";
-    color: white;
+.ProjectBold {
+  padding-right: 50px;
+  padding-top: 16px;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size:medium;
+  align-items: left;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 50;
+}
+
+.listStyle li:hover {
+  cursor: pointer;
+}
+
+.Project p{
+    color: gray;
     text-decoration: none;
+    font-weight: 600;
 }
 
-.Project a:hover {
-    font-family: "Monument Extended Ultrabold";
+.Project p:hover {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 800;
 }
 

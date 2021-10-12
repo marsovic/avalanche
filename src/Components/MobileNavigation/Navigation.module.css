@@ -1,0 +1,98 @@
+.Navigation {
+  list-style: none;
+  margin: 0px;
+  /*float: right;*/
+  width: 100vw;
+  height: 12vh;
+  position: relative;
+  z-index: 10;
+  padding-top: 1vh;
+  text-decoration: none;
+  /*align-items: end;*/
+}
+
+.Logo {
+  height: 8vh;
+  margin-top: 2vh;
+  padding-top: 2vh;
+  max-width: auto;
+  margin: 0;
+  padding-left: 7vw;
+}
+
+.Link:first-child {
+  border-left: none;
+  float: right;
+  text-decoration: none;
+  padding-right: 4%;
+}
+
+.Link {
+  float: right;
+  padding-left: 3vh;
+  padding-right: 7vw;
+  font-family: "Monument Extended Regular";
+  color: white;
+  font-size: 300%;
+  text-decoration: none;
+  padding-top: 1vh;
+}
+
+.Link:hover {
+  color: white;
+  text-decoration: none;
+  font-family: "Monument Extended Ultrabold";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.DropdownContent {
+  text-decoration: none;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+}
+  
+.DropdownContent a {
+  text-decoration: none;
+    padding-top: 16px ;
+    text-decoration: none;
+    font-family: "Monument Extended Regular";
+    color: white;
+    font-size: small;
+    display: block;
+    align-items: left;
+  }
+
+.DropdownContent a:hover {
+  font-family: "Monument Extended Ultrabold";
+  text-decoration: none;
+}
+
+.Dropdown {
+  text-decoration: none;
+  float: right;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 6vh;
+  font-size: larger;
+  font-family: "Monument Extended Regular";
+  color: white;
+  text-decoration: none;
+}
+
+.Dropdown:hover .DropdownContent {
+  display: block;
+}
+
+.Dropdown:hover{
+  text-decoration: none;
+  color: white;
+  font-family: "Monument Extended Ultrabold";
+} 

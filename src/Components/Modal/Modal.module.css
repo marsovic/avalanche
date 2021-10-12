@@ -1,0 +1,88 @@
+.Modal {
+    position: fixed;
+    z-index: 70;
+    background-color: black;
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    transition: transform 1s;
+}
+
+.Link:first-child {
+    border-left: none;
+    float: left;
+    text-decoration: none;
+    padding-right: 4%;
+  }
+  
+  .MenuSymbol {
+    float:left;
+    width: fit-content;
+    font-family: "Monument Extended Regular";
+    color: white;
+    padding-top: 3vh;
+    font-size: 300%;
+    padding-left: 3vh;
+  }
+
+
+  .Link {
+    float: left;
+    padding-left: 3vh;
+    width: 50vw;
+    padding-right: 7vw;
+    font-family: "Monument Extended Regular";
+    color: white;
+    font-size: 80%;
+    text-decoration: none;
+    padding-top: 2vh;
+  }
+
+  .Link :hover {
+    text-decoration: none;
+    color: white;
+  }
+
+  .Link p {
+      width: fit-content;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+  
+  .DropdownContent {
+    text-decoration: none;
+      display: none;
+      position: absolute;
+      min-width: 160px;
+  }
+    
+  .DropdownContent a {
+    text-decoration: none;
+      padding-top: 16px ;
+      text-decoration: none;
+      font-family: "Monument Extended Regular";
+      color: white;
+      font-size: small;
+      display: block;
+      align-items: left;
+    }
+
+  .Dropdown {
+    text-decoration: none;
+    float: left;
+    font-size: 100%;
+    font-family: "Monument Extended Regular";
+    color: white;
+    text-decoration: none;
+    padding-left: 3vh;
+    padding-right: 7vw;
+    padding-top: 1vh;
+  }
+
+  

@@ -4,35 +4,37 @@ import { NavLink } from "react-router-dom";
 import logoAvalanche from "../../assets/Images/logo.png"
 
 class Navigation extends Component {
-    state = {
-        rooms: null
-    }
-
     render() {
+        var lang = null;
+        if(this.props.lang === "en" || this.props.lang === "null") {
+            lang = "fr"
+        }
+        
+        if(this.props.lang === "fr") {
+            lang = "en"
+        }
+
         return (
             <div className={styles.Navigation}>
                 <ul>
-                    <NavLink /*className={styles.Link}*/ to="/">
+                    <NavLink className={{border:"1px solid red"}} to="/">
                         <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
                     </NavLink>
-                    <NavLink className={styles.Link} style={{border: "2px solid white", padding:"2px", marginTop:"15px", alignItems:"center", fontSize: 'small'}} to="/">
-                        FR
+                    <NavLink className={styles.Link} style={{marginTop:"6vh",marginLeft:"2vw",border: "2px solid white", marginRight:"4vw", padding:"2px", alignItems:"center", fontSize: 'small', textTransform: "uppercase"}} onClick={this.props.handleLang} to="/">
+                        {lang}
                     </NavLink>
-                    <NavLink className={styles.Link} style={{borderLeft: "2px solid white", height: "14px", verticalAlign: "top", paddingBottom:"20px"}} to="/">
-                        Corp
+                    <NavLink className={styles.Link} id="bottom" to="/contact">
+                        CONTACT
                     </NavLink>
-                    <NavLink className={styles.Link} to="/">
-                        Contact
+                    <NavLink className={styles.Link} to="/about">
+                        ABOUT
                     </NavLink>
-                    <NavLink className={styles.Link} to="/">
-                        About
-                    </NavLink>
-                    <NavLink className={styles.Dropdown} to="/">
-                        Work
+                    <NavLink className={styles.Dropdown} to="#">
+                        WORK
                         <div className={styles.DropdownContent}>
-                            <a href="/">Music Video</a>
-                            <a href="/">Advertising</a>
-                            <a href="/">Fiction</a>
+                            <NavLink to="/video">MUSIC VIDEO</NavLink>
+                            <NavLink to="/advertising">ADVERTISING</NavLink>
+                            <NavLink to="/fiction">FICTION</NavLink>
                         </div>
                     </NavLink>
                 </ul>

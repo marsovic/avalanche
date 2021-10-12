@@ -1,0 +1,54 @@
+.About {
+  text-decoration: none;
+  position: relative;
+  z-index: 5;
+  color: white;
+  padding-left: 3vw;
+  padding-top: 3vh;
+  height: 30vh;
+}
+
+.Title {
+  font-family: "Monument Extended Ultrabold";
+  color: white;
+  font-weight: 900;
+  font-size: x-large;
+  padding-left: 3vw;
+  text-transform: uppercase;
+  
+}
+
+.UnderName {
+  font-family: "Monument Extended Regular";
+  color: white;
+  padding-top: 2vh;
+  font-size: small;
+  padding-left: 12vw;
+  width: 90vw;
+}
+
+.UnderName a {
+  text-decoration: none;
+  color: white;
+  font-family: "Helvetica Neue";
+} 
+
+.Name {
+  padding-top: 5vh;
+  font-family: "Monument Extended Ultrabold";
+  color: white;
+  font-weight: 900;
+  font-size: medium;
+  width: 40vw;
+  padding-left: 3vw;
+}
+
+.Body {
+  font-family: "Monument Extended Ultrabold";
+  color: white;
+  padding-top: 2vh;
+  font-size: small;
+  padding-left: 12vw;
+  width: 80vw;
+  font-weight: 800;
+}

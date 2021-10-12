@@ -1,0 +1,61 @@
+.News {
+  height: 40vh;
+  margin-left: O;
+  position: relative;
+}
+
+.Title {
+  padding-left: 7vw;
+  padding-right: 50px;
+  padding-top: 3vh;
+  font-family: "Monument Extended Ultrabold";
+  color: white;
+  font-size:x-large;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.Project {
+    color: white;
+    font-size:small;
+    font-weight: 400;
+    font-family: "Monument Extended Regular";
+    padding-top: 0;
+    width: 85vw;
+    padding-left: 12vw;
+}
+
+.ProjectBold {
+  color: white;
+  text-transform: uppercase;
+  font-size:medium;
+  font-weight: 900;
+  font-family: "Monument Extended Ultrabold";
+}
+
+.Video {
+  height: 25vh;
+  width: fit-content;
+  overflow: hidden;
+  margin-top: -10px;
+  background-position: center;
+  z-index: 20;
+}
+
+.listVideo {
+  padding-left: 0;
+  z-index: 10;
+}
+
+.TitleVideo {
+  overflow: hidden;
+  position: relative;
+  padding-top: 7vh;
+  padding-left: 7vw;
+  width: 100vw;
+}
+
+.UnitVideo {
+  display: block;
+  box-sizing: border-box;
+}

@@ -1,36 +1,122 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import styles from "./News.module.css";
 
-class Navigation extends Component {
+class News extends Component {
     state = {
-        projects: [
-            {name: "Bleu Chose", video:"https://vimeo.com/547635244"},
-            {name: "Jedn Charbon", video:"https://vimeo.com/521641589"},
-            {name: "Mi Vida", video:"https://vimeo.com/397626652"}
-        ],
-        rerender: false
+        projects: null,
+        rerender: false,
+        loading: true
     };
 
-    handleRerender = () => {
-        const temp = !this.state.rerender
-        this.setState({rerender: temp})
-    } 
+    componentDidMount() {
+        const urlVideo = "https://parseapi.back4app.com/classes/video";
+        const urlAdv = "https://parseapi.back4app.com/classes/advertising";
+        const options = {
+            headers: {
+                "X-Parse-Application-Id": process.env.REACT_APP_APP_ID,
+                "X-Parse-REST-API-Key": process.env.REACT_APP_API_KEY,
+                "X-Parse-Revocable-Session": 1,
+                "Content-Type": "application/json",
+            }
+        };
+
+        var projects = null;
+        axios
+            .get(urlVideo, options)
+            .then(res => {
+                projects = res.data.results
+                axios
+                    .get(urlAdv, options)
+                    .then(res2 => {
+                        projects = projects.concat(res2.data.results)
+                        projects.sort(function (a, b) {
+                            return a.updatedAt < b.updatedAt;
+                        });
+                        // On garde que les 5 dernières nouveautés
+                        projects = projects.slice(0, 4)
+                        console.log(projects)
+                        this.setState({
+                            loading: false,
+                            projects: projects
+                        })
+                    })
+                    .catch(function (error) {
+                        if (error.response) {
+                            console.log(error.response);
+                        }
+                    })
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    console.log(error.response);
+                }
+            })
+    }
 
     render() {
+        var toShow = null;
+        if (this.state.loading) {
+            toShow = (
+                <div className={styles.Project} >
+                    <p>Loading</p>
+                </div>
+
+            )
+        } else {
+            if (this.state.projects !== null) {
+                toShow = Object.keys(this.state.projects)
+                    .map(key => {
+                        return [...Array(this.state.projects[key])].map((_, i) => {
+                            var temp = null;
+                            if(this.props.title === this.state.projects[key].title) {
+                                temp = (
+                                    <li >
+                                        <p
+                                            className={styles.ProjectBold}
+                                            id={key+1}
+                                            key={key + 1}
+                                            onMouseEnter={this.props.setVideo}
+                                            onMouseUp={this.props.clickVideo}
+                                            value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
+                                            {this.state.projects[key].author} - {this.state.projects[key].title}
+                                        </p>
+                                    </li>
+                                )
+                            } else {
+                                temp = (
+                                    <li >
+                                        <p
+                                            className={styles.Project}
+                                            id={key+1}
+                                            key={key + 1}
+                                            onMouseEnter={this.props.setVideo}
+                                            onMouseUp={this.props.clickVideo}
+                                            value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
+                                            {this.state.projects[key].author} - {this.state.projects[key].title}
+                                        </p>
+                                    </li>
+                                )
+                            }
+                            
+                            return temp;
+                        })
+                    })
+            }
+        }
+
         return (
             <div className={styles.News}>
-                <ul>
-                    <li className={styles.Title}>
+                <p className={styles.Title}>
                         News
-                    </li>
-                    <li className={styles.Project}> <a href="/" onMouseEnter={this.props.setVideo} value="https://vimeo.com/547635244"> Bleu Chose </a> </li>
-                    <li className={styles.Project}> <a href="/" onMouseEnter={this.props.setVideo} value="https://vimeo.com/521641589" >Jedn Charbon</a> </li>
-                    <li className={styles.Project}> <a href="/" onMouseEnter={this.props.setVideo} value="https://vimeo.com/397626652">Mi Vida</a></li>
+                </p>
+                <ul className={styles.listStyle}>
+                    {toShow}
                 </ul>
             </div>
         );
     }
 }
 
-export default Navigation;
+export default News;
