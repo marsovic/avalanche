@@ -38,7 +38,7 @@
 .Body {
   font-family: "Monument Extended Ultrabold";
   color: white;
-  font-size:2vw; /*32px*/
+  font-size:2.9vmin; /*32px*/
   padding-top: 2vh;
   width: 25vw;
 }
@@ -46,7 +46,7 @@
 .BodyFr {
   font-family: "Monument Extended Ultrabold";
   color: white;
-  font-size:2vw; /*30px*/
+  font-size:2.6vmin; /*30px*/
   padding-top: 2vh;
   width: 33vw;
 }
