@@ -25,15 +25,10 @@ class MobileMain extends Component {
     }
 
     setVideo = (event) => {
-        if (event._targetInst.memoizedProps.value) {
-            var listItems = document.querySelectorAll("li > p");
-            for (let elem = 0; elem < listItems.length; elem++) {
-                listItems[elem].className = styles.NotBold
-            }
-            document.getElementById(event._targetInst.key).className = styles.Bold
-            const selectedVideo = event._targetInst.memoizedProps.value[1]
+        if (event.currentTarget.dataset.video) { 
+            const selectedVideo = event.currentTarget.dataset.video
             if (selectedVideo !== this.state.video && selectedVideo !== undefined) {
-                this.setState({ teaser: selectedVideo, play: false })
+                this.setState({ video: selectedVideo, selected: true ,play: false })
             }
         }
         event.stopPropagation()
@@ -114,7 +109,6 @@ class MobileMain extends Component {
             }
 
             if (this.props.select === "work") {
-                console.log("work")
                 axios
                     .get(urlVideo, options)
                     .then(res => {
@@ -148,7 +142,6 @@ class MobileMain extends Component {
             }
 
             if (this.props.select === "advertising") {
-                console.log("adv")
                 axios
                     .get(urlAdv, options)
                     .then(res => {
@@ -173,7 +166,6 @@ class MobileMain extends Component {
             }
 
             if (this.props.select === "video") {
-                console.log("video")
                 axios
                     .get(urlVideo, options)
                     .then(res => {
@@ -258,7 +250,7 @@ class MobileMain extends Component {
             if (this.props.select === "advertising") {
                 toShow = (
                     <div>
-                        <Advertising setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
+                        <Advertising setVideo={this.setVideo} title={this.state.title} />
                     </div>
                 )
             }

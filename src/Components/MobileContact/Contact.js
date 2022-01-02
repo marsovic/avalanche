@@ -18,7 +18,6 @@ class Contact extends Component {
         }
 
         var text = lang.Contact.body1.split("?")
-        console.log(text)
 
         return (
             <div className={styles.Contact}>
@@ -34,8 +33,8 @@ class Contact extends Component {
 
                 <div className={styles.Body2} style={{fontSize:"medium"}}>
                     <a href="mailto:contact@avalancheparis.tv">contact@avalancheparis.tv</a> <br/>
-                    <p>+33 6 95 65 74 14</p> <br/>
-                    <a href="blablabla">@avalancheparis</a>
+                    <a href="tel:+33 6 95 65 74 14">+33 6 95 65 74 14</a> <br/>
+                    <a href="https://www.instagram.com/avalancheparis/">@avalancheparis</a>
                 </div>
             </div>
         )

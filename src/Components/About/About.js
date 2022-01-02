@@ -32,7 +32,8 @@ class Advertising extends Component {
         }
 
         return (
-            <Container fluid className={styles.About}>
+            <div className={styles.About}>
+            <Container fluid >
                 <div className={styles.Title}>
                     {lang.About.titre}
                 </div>
@@ -61,6 +62,7 @@ class Advertising extends Component {
                     </Col>
                 </Row>
             </Container>
+            </div>
         )
 
     }

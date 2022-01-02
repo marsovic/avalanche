@@ -8,8 +8,35 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "shortcuts": [
+    {
+      "name": "Advertising Avalanche Paris",
+      "description": "Advertising Avalanche Paris",
+      "url": "/advertising"
+    },
+    {
+      "name": "Fiction Avalanche Paris",
+      "description": "Fiction Avalanche Paris",
+      "url": "/fiction"
+    },
+    {
+      "name": "Music video Avalanche Paris",
+      "description": "Music video Avalanche Paris",
+      "url": "/video"
+    },
+    {
+      "name": "About Avalanche Paris",
+      "description": "About Avalanche Paris",
+      "url": "/about"
+    },
+    {
+      "name": "Contact Avalanche Paris",
+      "description": "Contact Avalanche Paris",
+      "url": "/contact"
+    }
+  ],
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "black",
   "background_color": "#ffffff"
 }

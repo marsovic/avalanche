@@ -24,9 +24,13 @@ class Advertising extends Component {
         axios
             .get(url, options)
             .then(res => {
+                var projects = res.data.results
+                projects.sort(function (a, b) {
+                    return a.updatedAt < b.updatedAt;
+                })
                 this.setState({
                     loading: false,
-                    projects: res.data.results
+                    projects: projects
                 })
             })
             .catch(function (error) {

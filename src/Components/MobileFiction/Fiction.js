@@ -25,9 +25,13 @@ class Fiction extends Component {
         axios
             .get(url, options)
             .then(res => {
+                var projects = res.data.results
+                projects.sort(function (a, b) {
+                    return a.updatedAt < b.updatedAt;
+                })
                 this.setState({
                     loading: false,
-                    projects: res.data.results
+                    projects: projects
                 })
             })
             .catch(function (error) {
@@ -51,30 +55,14 @@ class Fiction extends Component {
                 toShow = Object.keys(this.state.projects)
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
-
-                            if(this.props.lang === "fr") {
-                            return (
-                                        <div className={styles.UnitVideo}>
-                                            <div className={styles.Video}>
-                                                <Vimeo
-                                                    autoplay={false}
-                                                    video={this.state.projects[key].teaser}
-                                                    controls={false}
-                                                    width={window.innerWidth}
-                                                    showPortrait={true}
-                                                    muted={true}
-                                                />
-                                            </div>
-                                            <div className={styles.TitleVideo}>
-                                                <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
-                                                <p className={styles.Project}> {this.state.projects[key].textFR} </p>
-                                            </div>
-                                        </div>
-                                )
-                            } else {
-                                return (
-                                    <div className={styles.UnitVideo}>
-                                        <div className={styles.Video}>
+                            var temp = null;
+                            if (this.props.title === this.state.projects[key].title) {
+                                temp = (
+                                    <div 
+                                        className={styles.UnitVideo}
+                                        onMouseEnter={this.props.setVideo}
+                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.Video} >
                                             <Vimeo
                                                 autoplay={false}
                                                 video={this.state.projects[key].teaser}
@@ -84,14 +72,39 @@ class Fiction extends Component {
                                                 muted={true}
                                             />
                                         </div>
-                                        <div className={styles.TitleVideo}>
+                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
+                                        data-video={this.state.projects[key].video}>
                                             <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
-                                            <p className={styles.Project}> {this.state.projects[key].textEN} </p>
+                                            <p className={styles.Project}> {this.state.projects[key].author} </p>
+                                        </div>
+                                    </div>
+                                ) 
+                            } else {
+                                temp = (
+                                    <div 
+                                        className={styles.UnitVideo}
+                                        onMouseEnter={this.props.setVideo}
+                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.Video}>
+                                            <Vimeo
+                                                autoplay={false}
+                                                video={this.state.projects[key].teaser}
+                                                controls={false}
+                                                width={window.innerWidth}
+
+                                                showPortrait={true}
+                                                muted={true}
+                                            />
+                                        </div>
+                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
+                                        data-video={this.state.projects[key].video}>
+                                            <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
+                                            <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>
                                     </div>
                                 )
                             }
-
+                            return temp;
                         })
                     })
             }
@@ -100,7 +113,7 @@ class Fiction extends Component {
         return (
             <div className={styles.News}>
                 <p className={styles.Title}>
-                    ADVERTISING
+                    Fiction
                 </p>
                 <div className={styles.listVideo}>
                     {toShow}

@@ -4,15 +4,14 @@
   z-index: 4;
   color: white;
   padding-left: 3vw;
-  padding-top: 10vh;
-  height: 30vh;
+  padding-top: 15vh;
+  height:fit-content;
   text-align: center;
-  width: 50%;
+  width: 100vw;
   font-size: x-large;
 }
 
 .Title {
-  padding-top: 10%;
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-size: larger;

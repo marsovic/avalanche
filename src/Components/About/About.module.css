@@ -3,9 +3,9 @@
   position: relative;
   z-index: 4;
   color: white;
-  padding-left: 3vw;
+  margin-left: 70px;
   padding-top: 10vh;
-  height: 30vh;
+  height: 100vh;
 }
 
 .Title {
@@ -20,6 +20,8 @@
     padding-top: 1vh;
     font-family: "Helvetica Neue";
     font-size: 1vw;
+    text-align: justify;
+  text-justify: inter-word;
 }
 
 .UnderName a {
@@ -29,7 +31,7 @@
 
 .Name {
     font-family: "Monument Extended Ultrabold";
-    font-size: 4vw;
+    font-size: 3vw;
     width: 30vw;
     line-height: 70px;
     margin-top: -1vh;
@@ -46,13 +48,19 @@
 .BodyFr {
   font-family: "Monument Extended Ultrabold";
   color: white;
-  font-size:2.6vmin; /*30px*/
+  font-size:2.4vmin; /*30px*/
   padding-top: 2vh;
-  width: 33vw;
+  width: 25vw;
 }
 
 .Picture {
     height: 40vh;
     margin-top: 2vh;
     width: auto;
+}
+
+@media (min-width:1400px) {
+  .Name {
+    font-size: 2.5vw;
+  }
 }
