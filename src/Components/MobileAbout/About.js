@@ -27,16 +27,19 @@ class Advertising extends Component {
                     </div>
                 </div>
 
-                <div className={styles.Name}>
-                    Thibault Cadentem
-                </div>
-                <div className={styles.UnderName}>
 
-                    {lang.About.underName}
+                <div className={styles.Title}>
+                    Contact
                 </div>
 
                 <div className={styles.UnderName} style={{ paddingTop: "3vh" }}>
-                    <a href="https://www.instagram.com/thibaultcadentem/?hl=fr">@thibaultcadentem</a>
+                    <a href="mailto:thibaultcadentem@gmail.com">thibaultcadentem@gmail.com</a> <br />
+                    <div style={{ paddingTop: "1vh" }}>
+                        <a href="tel:+33 6 95 65 74 14">+33 6 95 65 74 14</a><br />
+                    </div>
+                    <div style={{ paddingTop: "1vh" }}>
+                        <a href="https://www.instagram.com/thibaultcadentem/?hl=fr">@thibaultcadentem</a>
+                    </div>
                 </div>
             </div>
         )

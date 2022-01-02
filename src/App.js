@@ -1,6 +1,7 @@
 import { Route } from 'react-router-dom';
 import Main from "./container/Main/Main";
 import MobileMain from "./container/MobileMain/MobileMain"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { Component } from "react";
 
@@ -10,13 +11,13 @@ class App extends Component {
   render() {
     return (
       <div className={styles.App}>
+        <h1> Avalanche </h1>
           <div className={styles.desktop}>
             <Route path="/" exact render= {() => <Main select="work"/>} />
             <Route path="/about" exact render= {() => <Main select="about"/>} />
             <Route path="/advertising" exact render= {() => <Main select="advertising"/>} />
             <Route path="/fiction" exact render= {() => <Main select="fiction"/>} />
             <Route path="/video" exact render= {() => <Main select="video"/>} />
-            <Route path="/contact" exact render= {() => <Main select="contact"/>} />
           </div>
 
           <div className={styles.mobile}>
@@ -25,7 +26,6 @@ class App extends Component {
             <Route path="/advertising" exact render= {() => <MobileMain select="advertising"/>} />
             <Route path="/fiction" exact render= {() => <MobileMain select="fiction"/>} />
             <Route path="/video" exact render= {() => <MobileMain select="video"/>} />
-            <Route path="/contact" exact render= {() => <MobileMain select="contact"/>} />
           </div>
       </div>
     );

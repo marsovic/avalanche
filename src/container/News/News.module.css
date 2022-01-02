@@ -1,22 +1,23 @@
 .News {
-  height: 40vh;
+  height: fit-content;
   margin-top: 17vh;
-  margin-left: 50px;
+  margin-left: 70px;
   position: relative;
+  width: fit-content;
 }
 
 .Title {
-  padding-right: 50px;
+  /* margin-left: 50px; */
   padding-top: 16px;
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-size:x-large;
   text-decoration: none;
   text-transform: uppercase;
+  width: fit-content;
 }
 
 .Project {
-    padding-right: 50px;
     padding-top: 16px;
     width: fit-content;
     color: gray;
@@ -25,12 +26,11 @@
     font-size:medium;
     align-items: left;
     font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Helvetica Roman";
     z-index: 50;
 }
 
 .ProjectBold {
-  padding-right: 50px;
   padding-top: 16px;
   width: fit-content;
   color: white;
@@ -39,12 +39,16 @@
   font-size:medium;
   align-items: left;
   font-weight: 900;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Roman";
   z-index: 50;
 }
 
-.listStyle li:hover {
-  cursor: pointer;
+.listStyle {
+  padding-left: 0;
+}
+
+.listStyle p:hover {
+  cursor:pointer;
 }
 
 .Project p{
@@ -54,7 +58,7 @@
 }
 
 .Project p:hover {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Roman";
   color: white;
   font-weight: 800;
 }

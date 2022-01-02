@@ -1,8 +1,9 @@
 .News {
-  height: 40vh;
+  height: fit-content;
   margin-top: 17vh;
-  margin-left: 10px;
+  margin-left: 70px;
   position: relative;
+  width: fit-content;
 }
 
 .Title {
@@ -17,31 +18,46 @@
 }
 
 .ProjectFictionTitle {
-  color: white;
+  color: gray;
   font-size:large;
   padding-top: 16px;
   font-weight: 600;
+  width: fit-content;
   padding-left: 50px;
   text-transform: uppercase;
+}
+
+.ProjectFictionTitle:hover {
+  color: white;
+  font-size:large;
+  font-weight: 900;
 }
 
 .ProjectFiction {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Helvetica Roman";
     color: white;
-    width: 22vw;
+    width: fit-content;
     font-weight: 800;
     text-decoration: none;
     font-size: medium;
     align-items: left;
 }
 
+.listStyle {
+  padding-left: 0;
+}
+
+.listStyle p:hover {
+  cursor:pointer;
+}
+
 .ProjectFiction p {
   padding-left: 0px;
   padding-top: 0px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Roman";
   font-weight: 1000;
   color: white;
   width: 27vw;
@@ -54,7 +70,7 @@
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Roman";
   color: lightgray;
   width: 27vw;
   font-weight: 400;

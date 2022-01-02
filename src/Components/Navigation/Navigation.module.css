@@ -23,13 +23,13 @@
   border-left: none;
   float: right;
   text-decoration: none;
-  padding-right: 2%;
+  /* padding-right: 2%; */
 }
 
 .Link {
   float: right;
-  padding-left: 1%;
-  padding-right: 2%;
+  /* padding-left: 1%; */
+  /* padding-right: 2%; */
   font-family: "Monument Extended Regular";
   color: white;
   font-size: larger;
@@ -37,6 +37,16 @@
   padding-top: 6vh;
 }
 
+.LinkLang {
+  float: right;
+  /* padding-left: 1%;
+  padding-right: 2%; */
+  font-family: "Monument Extended Regular";
+  color: white;
+  font-size: larger;
+  text-decoration: none;
+  padding-top: 6vh;
+}
 .Link:hover {
   color: white;
   text-decoration: none;
@@ -77,8 +87,8 @@ ul {
 .Dropdown {
   text-decoration: none;
   float: right;
-  padding-left: 50px;
-  padding-right: 50px;
+  /*padding-left: 50px;
+  padding-right: 50px; */
   padding-top: 6vh;
   font-size: larger;
   font-family: "Monument Extended Regular";
@@ -95,3 +105,42 @@ ul {
   color: white;
   font-family: "Monument Extended Ultrabold";
 } 
+
+@media (max-width:1900px) {
+  .Dropdown {
+    font-size: small;
+  }
+
+  .Link {
+    font-size: small;
+  }
+}
+
+@media (max-width:1400px) {
+  .Dropdown {
+    font-size:x-small
+  }
+
+  .Link {
+    font-size: x-small;
+  }
+}
+
+.Name {
+  text-decoration: none;
+  color: white;
+  font-family: "Monument Extended Ultrabold";
+  text-transform: uppercase;
+  font-size: 3vh;
+  max-width: auto;
+}
+
+.Name div {
+  margin-left: 50px;
+  padding-top: 3vh;
+}
+
+.Name:hover {
+  color: white;
+  text-decoration: none;
+}

@@ -7,7 +7,7 @@
 .Title {
   padding-left: 7vw;
   padding-right: 50px;
-  padding-top: 3vh;
+  padding-top: 16px;
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-size:x-large;
@@ -20,23 +20,24 @@
     text-transform: uppercase;
     font-size:small;
     font-weight: 400;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 0;
+    font-family: "Helvetica Roman";
+    margin-top: -40px;
 }
 
 .ProjectBold {
   color: white;
   text-transform: uppercase;
+  padding-bottom: 0;
   font-size:medium;
   font-weight: 900;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Roman";
 }
 
 .Video {
-  height: 25vh;
+  height: 200px; /* 25vh*/
   width: fit-content;
   overflow: hidden;
-  margin-top: -10px;
+  margin-top: -22px;
   background-position: center;
   z-index: 20;
 }
@@ -49,9 +50,11 @@
 .TitleVideo {
   overflow: hidden;
   position: absolute;
-  margin-top: -17vh;
+  margin-top: -163px; /* -17vh*/
   width: 100vw;
   text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .TitleVideo p {
@@ -64,4 +67,5 @@
 .UnitVideo {
   display: block;
   box-sizing: border-box;
+  background-color: black;
 }

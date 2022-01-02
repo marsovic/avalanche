@@ -5,50 +5,60 @@
   color: white;
   padding-left: 3vw;
   padding-top: 3vh;
-  height: 30vh;
+  height: auto;
+  background-color: black;
 }
 
 .Title {
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-weight: 900;
-  font-size: x-large;
+  font-size: 6vmin;
   padding-left: 3vw;
   text-transform: uppercase;
-  
+  padding-top: 5vh;
 }
 
 .UnderName {
   font-family: "Monument Extended Regular";
   color: white;
   padding-top: 2vh;
-  font-size: small;
+  font-size: 4vmin;
   padding-left: 12vw;
-  width: 90vw;
+  width: 88vw;
+  text-align: left;
+  text-justify: inter-word;
+  background-color: black;
 }
 
 .UnderName a {
   text-decoration: none;
   color: white;
   font-family: "Helvetica Neue";
+  background-color: black;
 } 
+
 
 .Name {
   padding-top: 5vh;
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-weight: 900;
-  font-size: medium;
+  font-size: 5vmin;
   width: 40vw;
   padding-left: 3vw;
+  background-color: black;
 }
 
 .Body {
   font-family: "Monument Extended Ultrabold";
   color: white;
   padding-top: 2vh;
-  font-size: small;
+  font-size: 3.5vmin;
   padding-left: 12vw;
-  width: 80vw;
+  width: 88vw;
   font-weight: 800;
+  text-align: left;
+  text-justify: inter-word;
+  background-color: black;
 }

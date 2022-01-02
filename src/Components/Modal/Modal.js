@@ -14,40 +14,63 @@ class Modal extends Component {
 
     render() {
         var lang = null;
+        var toShow= null;
+
         if(this.props.lang === "en" || this.props.lang === "null") {
             lang = "fr"
+
+            if(this.state.workClicked) {
+                toShow= (
+                    <div>
+                        <NavLink to="/video"> <p className={styles.Link} > MUSIC VIDEO </p></NavLink>
+                        <NavLink to="/advertising"> <p className={styles.Link} > ADVERTISING </p></NavLink>
+                        <NavLink to="/fiction"> <p className={styles.Link} >FICTION</p></NavLink>
+                    </div>
+                )
+            } else {
+                toShow= (
+                    <div>
+                        <div className={styles.Link} onClick={this.workClicked}>
+                            WORK
+                        </div>
+                        <NavLink className={styles.Link} to="/about">
+                            ABOUT/<br/>CONTACT
+                        </NavLink>
+                        <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
+                            <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
+                        </NavLink>
+                    </div>
+                )
+            }
+
         }
         
         if(this.props.lang === "fr") {
             lang = "en"
-        }
 
-        var toShow= null
-        if(this.state.workClicked) {
-            toShow= (
-                <div>
-                    <NavLink className={styles.Link} to="/video">MUSIC VIDEO</NavLink>
-                    <NavLink className={styles.Link} to="/advertising">ADVERTISING</NavLink>
-                    <NavLink className={styles.Link} to="/fiction">FICTION</NavLink>
-                </div>
-            )
-        } else {
-            toShow= (
-                <div>
-                    <div className={styles.Link} onClick={this.workClicked}>
-                        Work
+            if(this.state.workClicked) {
+                toShow= (
+                    <div>
+                        <NavLink to="/video">  <p className={styles.Link} >VIDEOS CLIPS</p></NavLink>
+                        <NavLink to="/advertising"><p className={styles.Link} >PUBLICITES</p></NavLink>
+                        <NavLink to="/fiction"><p className={styles.Link} >FICTION</p></NavLink>
                     </div>
-                    <NavLink className={styles.Link} to="/about">
-                        About
-                    </NavLink>
-                    <NavLink className={styles.Link} id="bottom" to="/contact">
-                        Contact
-                    </NavLink>
-                    <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
-                        <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
-                    </NavLink>
-                </div>
-            )
+                )
+            } else {
+                toShow= (
+                    <div>
+                        <div className={styles.Link} onClick={this.workClicked}>
+                            ACTIVITES
+                        </div>
+                        <NavLink className={styles.Link} to="/about">
+                            A PROPOS/<br/>CONTACT
+                        </NavLink>
+                        <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
+                            <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
+                        </NavLink>
+                    </div>
+                )
+            }
         }
 
         return (
