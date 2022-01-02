@@ -14,10 +14,9 @@ class Modal extends Component {
 
     render() {
         var lang = null;
-        var toShow= null;
-
         if(this.props.lang === "en" || this.props.lang === "null") {
             lang = "fr"
+<<<<<<< HEAD
 
             if(this.state.workClicked) {
                 toShow= (
@@ -50,11 +49,15 @@ class Modal extends Component {
                 )
             }
 
+=======
+>>>>>>> parent of 2db92f2... end site
         }
         
         if(this.props.lang === "fr") {
             lang = "en"
+        }
 
+<<<<<<< HEAD
             if(this.state.workClicked) {
                 toShow= (
                     <div>
@@ -82,9 +85,34 @@ class Modal extends Component {
                         <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
                             <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
                         </NavLink>
+=======
+        var toShow= null
+        if(this.state.workClicked) {
+            toShow= (
+                <div>
+                    <NavLink className={styles.Link} to="/video">MUSIC VIDEO</NavLink>
+                    <NavLink className={styles.Link} to="/advertising">ADVERTISING</NavLink>
+                    <NavLink className={styles.Link} to="/fiction">FICTION</NavLink>
+                </div>
+            )
+        } else {
+            toShow= (
+                <div>
+                    <div className={styles.Link} onClick={this.workClicked}>
+                        Work
+>>>>>>> parent of 2db92f2... end site
                     </div>
-                )
-            }
+                    <NavLink className={styles.Link} to="/about">
+                        About
+                    </NavLink>
+                    <NavLink className={styles.Link} id="bottom" to="/contact">
+                        Contact
+                    </NavLink>
+                    <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
+                        <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
+                    </NavLink>
+                </div>
+            )
         }
 
         return (

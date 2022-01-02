@@ -8,7 +8,6 @@
   z-index: 10;
   padding-top: 1vh;
   text-decoration: none;
-  color: white;
   /*align-items: end;*/
 }
 
@@ -18,7 +17,7 @@
   padding-top: 2vh;
   max-width: auto;
   margin: 0;
-  margin-left: 5vw;
+  padding-left: 7vw;
 }
 
 .Link:first-child {

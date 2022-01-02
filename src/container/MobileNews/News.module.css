@@ -21,23 +21,22 @@
     font-size:small;
     font-weight: 400;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: -40px;
+    padding-top: 0;
 }
 
 .ProjectBold {
   color: white;
   text-transform: uppercase;
-  padding-bottom: 0;
   font-size:medium;
   font-weight: 900;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .Video {
-  height: 200px; /* 25vh*/
+  height: 25vh;
   width: fit-content;
   overflow: hidden;
-  margin-top: -22px;
+  margin-top: -10px;
   background-position: center;
   z-index: 20;
 }
@@ -50,11 +49,9 @@
 .TitleVideo {
   overflow: hidden;
   position: absolute;
-  margin-top: -163px; /* -17vh*/
+  margin-top: -17vh;
   width: 100vw;
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 .TitleVideo p {
@@ -67,5 +64,4 @@
 .UnitVideo {
   display: block;
   box-sizing: border-box;
-  background-color: black;
 }

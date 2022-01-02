@@ -10,28 +10,29 @@ import { Row, Col, Container } from 'reactstrap';
 class Advertising extends Component {
     render() {
         var lang = null;
-        var toShow = null;
+        var toShow= null;
 
-        if (this.props.lang === "en" || this.props.lang === null) {
+        if(this.props.lang === "en" || this.props.lang === null) {
             lang = En
 
             toShow = (
-                <div className={styles.Body} style={{ paddingTop: "3vh" }}>
+                <div className={styles.Body}>
                     {lang.About.body}
                 </div>
             )
         }
 
-        if (this.props.lang === "fr") {
+        if(this.props.lang === "fr") {
             lang = Fr
             toShow = (
-                <div className={styles.BodyFr} style={{ paddingTop: "3vh" }}>
+                <div className={styles.BodyFr}>
                     {lang.About.body}
                 </div>
             )
         }
 
         return (
+<<<<<<< HEAD
             <div className={styles.About}>
 <<<<<<< HEAD
                 <Container fluid >
@@ -42,6 +43,9 @@ class Advertising extends Component {
                                 {lang.About.titre}
 =======
             <Container fluid >
+=======
+            <Container fluid className={styles.About}>
+>>>>>>> parent of 2db92f2... end site
                 <div className={styles.Title}>
                     {lang.About.titre}
                 </div>
@@ -49,6 +53,7 @@ class Advertising extends Component {
                     <Col> 
                         {toShow}
                     </Col>
+<<<<<<< HEAD
 
                     <Col>
                         <div className={styles.Body} >
@@ -58,24 +63,25 @@ class Advertising extends Component {
                             </div>
                             {toShow}
                         </Col>
+=======
+>>>>>>> parent of 2db92f2... end site
 
-                        <Col>
-                            <br />
-                            <div className={styles.Title}>
-                                Contact
+                    <Col>
+                        <div className={styles.Body} >
+                            <div className={styles.Name}>
+                                THIBAULT CADENTEM
+                            </div>
+                            <div className={styles.UnderName}>
+                                {lang.About.underName}
                             </div>
 
-                            <div className={styles.UnderName} style={{ paddingTop: "3vh" }}>
-                                <a href="mailto:thibaultcadentem@gmail.com">thibaultcadentem@gmail.com</a> <br />
-                                <div style={{ paddingTop: "1vh" }}>
-                                    <a href="tel:+33 6 95 65 74 14">+33 6 95 65 74 14</a><br />
-                                </div>
-                                <div style={{ paddingTop: "1vh" }}>
-                                    <a href="https://www.instagram.com/thibaultcadentem/?hl=fr">@thibaultcadentem</a>   
-                                </div>
+                            <div className={styles.UnderName} style={{paddingTop:"3vh"}}>
+                                <a href="https://www.instagram.com/thibaultcadentem/?hl=fr">@thibaultcadentem</a>
                             </div>
-                        </Col>
+                        </div>
+                    </Col>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                         <Col>
                             <img alt="Thibault Cadentem" src={picture} className={styles.Picture} />
@@ -83,13 +89,18 @@ class Advertising extends Component {
                     </Row>
                 </Container>
 =======
+=======
+>>>>>>> parent of 2db92f2... end site
                     <Col>
                         <img alt="Thibault Cadentem" src={picture} className={styles.Picture}/>
                     </Col>
                 </Row>
             </Container>
+<<<<<<< HEAD
 >>>>>>> master
             </div>
+=======
+>>>>>>> parent of 2db92f2... end site
         )
 
     }

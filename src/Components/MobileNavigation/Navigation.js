@@ -26,6 +26,7 @@ class Navigation extends Component {
         )
 
         if(this.state.clicked) {
+            console.log(this.props.lang)
             toShow= <Modal lang={this.props.lang} show={true} closingModal={this.closingModal} onClickLang={this.props.handleLang}/>
         }
 
@@ -33,7 +34,7 @@ class Navigation extends Component {
             <div className={styles.Navigation}>
                 <ul>
                     <NavLink to="/">
-                        <img className={styles.Logo} src={logoAvalanche} alt={"Thibault Cadentem"} />
+                        <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
                     </NavLink>
                     
                     {toShow}

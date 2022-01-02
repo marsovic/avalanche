@@ -34,9 +34,10 @@ class News extends Component {
                         projects = projects.concat(res2.data.results)
                         projects.sort(function (a, b) {
                             return a.updatedAt < b.updatedAt;
-                        })
+                        });
                         // On garde que les 5 dernières nouveautés
                         projects = projects.slice(0, 4)
+                        console.log(projects)
                         this.setState({
                             loading: false,
                             projects: projects
@@ -70,13 +71,10 @@ class News extends Component {
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
                             var temp = null;
-                            if (this.props.title === this.state.projects[key].title) {
+                            if(this.props.title === this.state.projects[key].title) {
                                 temp = (
-                                    <div
-                                        className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
-                                        <div className={styles.Video} >
+                                    <div className={styles.UnitVideo}>
+                                        <div className={styles.Video}>
                                             <Vimeo
                                                 autoplay={false}
                                                 video={this.state.projects[key].teaser}
@@ -91,20 +89,16 @@ class News extends Component {
                                             <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>
                                     </div>
-                                ) // event._targetInst.return.return.stateNode.id
+                                )
                             } else {
                                 temp = (
-                                    <div
-                                        className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                    <div className={styles.UnitVideo}>
                                         <div className={styles.Video}>
                                             <Vimeo
                                                 autoplay={false}
                                                 video={this.state.projects[key].teaser}
                                                 controls={false}
                                                 width={window.innerWidth}
-
                                                 showPortrait={true}
                                                 muted={true}
                                             />
@@ -116,7 +110,7 @@ class News extends Component {
                                     </div>
                                 )
                             }
-
+                            
                             return temp;
                         })
                     })
@@ -126,7 +120,7 @@ class News extends Component {
         return (
             <div className={styles.News}>
                 <p className={styles.Title}>
-                    News
+                        News
                 </p>
                 <div className={styles.listVideo}>
                     {toShow}

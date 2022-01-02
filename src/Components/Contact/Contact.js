@@ -20,8 +20,7 @@ class Contact extends Component {
         }
 
         return (
-            <div className={styles.Contact}>
-            <Container fluid={true} >
+            <Container fluid={true} className={styles.Contact}>
                 <div className={styles.Title}>
                     CONTACT
                 </div>
@@ -33,11 +32,9 @@ class Contact extends Component {
 
                 <div className={styles.Body} style={{fontSize:"medium"}}>
                     <a href="mailto:contact@avalancheparis.tv">contact@avalancheparis.tv</a> <br/>
-                    <a href="tel:+33 6 95 65 74 14">+33 6 95 65 74 14</a><br/>
-                    <a href="https://www.instagram.com/avalancheparis/">@avalancheparis</a>
+                    +33 6 95 65 74 14
                 </div>
             </Container>
-            </div>
         )
 
     }

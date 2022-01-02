@@ -7,9 +7,7 @@ class Fiction extends Component {
     state = {
         projects: null,
         rerender: false,
-        loading: true,
-        showed: false,
-        title: null
+        loading: true
     };
 
     componentDidMount() {
@@ -26,14 +24,9 @@ class Fiction extends Component {
         axios
             .get(url, options)
             .then(res => {
-                var projects = res.data.results
-                projects.sort(function (a, b) {
-                    return a.updatedAt < b.updatedAt;
-                })
                 this.setState({
                     loading: false,
-                    projects: projects,
-                    title: projects[0].title
+                    projects: res.data.results
                 })
             })
             .catch(function (error) {
@@ -43,6 +36,7 @@ class Fiction extends Component {
             })
     }
 
+<<<<<<< HEAD
     showUnderText = (e) => {
 <<<<<<< HEAD
         this.setState({ showed: true, title: e.target.attributes[2] })
@@ -52,6 +46,8 @@ class Fiction extends Component {
         this.props.setVideo(e.target.attributes["value"].value.split(",")[1]);
     }
 
+=======
+>>>>>>> parent of 2db92f2... end site
     render() {
         var toShow = null;
         if (this.state.loading) {
@@ -66,7 +62,9 @@ class Fiction extends Component {
                 toShow = Object.keys(this.state.projects)
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
+
                             if (this.props.lang === "fr") {
+<<<<<<< HEAD
 <<<<<<< HEAD
                                 if (this.props.title === this.state.title) {
 =======
@@ -184,6 +182,59 @@ class Fiction extends Component {
                                         </li>
                                     )
                                 }
+=======
+                                return (
+                                    <li >
+                                        <p
+                                            className={styles.ProjectFictionTitle}
+                                            id={key + 1}
+                                            key={key + 3}
+                                            value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
+                                            {this.state.projects[key].title}
+                                        </p>
+                                        <p
+                                            className={styles.ProjectFiction}
+                                            id={key + 10}
+                                            key={key + 10}
+                                        >
+                                            {this.state.projects[key].textFR}
+                                        </p>
+                                        <p
+                                            className={styles.ProjectUnderFiction}
+                                            id={key + 10}
+                                            key={key + 10}
+                                        >
+                                            {this.state.projects[key].underTextFr}
+                                        </p>
+                                    </li>
+                                )
+                            } else {
+                                return (
+                                    <li >
+                                        <p
+                                            className={styles.ProjectFictionTitle}
+                                            id={key + 5}
+                                            key={key + 7}
+                                            value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
+                                            {this.state.projects[key].title}
+                                        </p>
+                                        <p
+                                            className={styles.ProjectFiction}
+                                            id={key + 10}
+                                            key={key + 10}
+                                        >
+                                            {this.state.projects[key].textEN}
+                                        </p>
+                                        <p
+                                            className={styles.ProjectUnderFiction}
+                                            id={key + 10}
+                                            key={key + 10}
+                                        >
+                                            {this.state.projects[key].underTextEn}
+                                        </p>
+                                    </li>
+                                )
+>>>>>>> parent of 2db92f2... end site
                             }
 
                         })
@@ -196,7 +247,7 @@ class Fiction extends Component {
                 <p className={styles.Title}>
                     FICTION
                 </p>
-                <ul className={styles.listStyle}>
+                <ul>
                     {toShow}
                 </ul>
             </div>

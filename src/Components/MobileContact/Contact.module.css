@@ -1,0 +1,46 @@
+.Contact {
+  text-decoration: none;
+  position: relative;
+  z-index: 4;
+  color: white;
+  padding-left: 3vw;
+  padding-top: 3vh;
+  height: 30vh;
+  text-align: left;
+  width: 50%;
+  font-size: x-large;
+}
+
+.Title {
+  font-family: "Monument Extended Ultrabold";
+  color: white;
+  font-size: x-large;
+  padding-left: 4vw;
+  text-transform: uppercase;
+}
+
+.Body {
+  margin-top: 5vh;
+  font-weight: 700;
+  font-size: medium;
+  width: 70vw;
+  margin-left: 12vw;
+}
+
+.Body2 {
+  margin-top: 3vh;
+}
+
+.Body2, .Body2 a, .Body2 p{
+  color: white;
+  text-decoration: none;
+  padding-top: 4%;
+  font-weight: 700;
+  font-size: medium;
+  width: 80vw;
+}
+
+.Body2 a, .Body2 p {
+  margin-left: 12vw;
+}
+

@@ -34,14 +34,10 @@ class Main extends Component {
             document.getElementById(event._targetInst.key).className = styles.Bold
             const selectedVideo = event._targetInst.memoizedProps.value[1]
             if (selectedVideo !== this.state.teaser && selectedVideo !== undefined) {
-                this.setState({ teaser: selectedVideo, play: false, video: event._targetInst.memoizedProps.value[0] })
+                this.setState({ teaser: selectedVideo, play: false })
             }
         }
         event.stopPropagation()
-    }
-
-    setFictionVideo = (vid) => {
-        this.setState({ teaser: vid, play: false })
     }
 
     clickVideo = (event) => {
@@ -49,15 +45,6 @@ class Main extends Component {
         this.setState({
             video: event.target.attributes["value"].nodeValue.split(",")[0],
             teaser: event.target.attributes["value"].nodeValue.split(",")[1],
-            play: false,
-            selected: true
-        })
-    }
-
-    clickedBackground = (e) => {
-        console.log(e.target.attributes)
-        this.setState({
-            video: e.target.attributes["value"].value,
             play: false,
             selected: true
         })
@@ -141,8 +128,7 @@ class Main extends Component {
                                 teaser: projects[0].teaser,
                                 lang: lng,
                                 load: false,
-                                selected: select,
-                                video: projects[0].video
+                                selected: select
                             })
                         })
                         .catch(function (error) {
@@ -171,9 +157,7 @@ class Main extends Component {
                         teaser: projects[0].teaser,
                         lang: lng,
                         load: false,
-                        selected: select,
-                        video: projects[0].video
-
+                        selected: select
                     })
 
                 })
@@ -185,7 +169,7 @@ class Main extends Component {
         }
 
         if (this.props.select === "video") {
-
+            console.log("video")
             axios
                 .get(urlVideo, options)
                 .then(res => {
@@ -198,8 +182,7 @@ class Main extends Component {
                         teaser: projects[0].teaser,
                         lang: lng,
                         load: false,
-                        selected: select,
-                        video: projects[0].video
+                        selected: select
                     })
 
                 })
@@ -223,8 +206,7 @@ class Main extends Component {
                         teaser: projects[0].teaser,
                         lang: lng,
                         load: false,
-                        selected: select,
-                        video: projects[0].video
+                        selected: select
                     })
 
                 })
@@ -246,59 +228,25 @@ class Main extends Component {
                 <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />)
         } else {
             if (this.props.select === "work") {
-
-                if (window.innerWidth / window.innerHeight > 16 / 9) {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer}>
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <News setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
+                toShow = (
+                    <div>
+                        <div className={styles.VideoPlayer}>
+                            <Vimeo
+                                autoplay={this.state.play}
+                                video={this.state.teaser}
+                                controls={false}
+                                onLoaded={this.startVideo}
+                                height={window.innerHeight}
+                                showPortrait={!this.state.play}
+                                paused={!this.state.play}
+                                muted={true}
+                                volume={this.state.volume}
+                                loop={true}
+                            />
                         </div>
-                    )
-                } else {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer} >
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    height={window.innerHeight}
-                                    // width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <News setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
-                        </div>
-                    )
-                }
+                        <News setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
+                    </div>
+                )
             }
 
             if (this.props.select === "about") {
@@ -322,180 +270,72 @@ class Main extends Component {
             }
 
             if (this.props.select === "fiction") {
-                if (window.innerWidth / window.innerHeight > 16 / 9) {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer}>
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <Fiction
-                                setVideo={this.setFictionVideo}
-                                clickVideo={this.clickVideo}
-                                lang={this.state.lang}
-                                title={this.state.title}
+                toShow = (
+                    <div>
+                        <div className={styles.VideoPlayer}>
+                            <Vimeo
+                                autoplay={this.state.play}
+                                video={this.state.teaser}
+                                controls={false}
+                                onLoaded={this.startVideo}
+                                height={window.innerHeight}
+                                showPortrait={!this.state.play}
+                                paused={!this.state.play}
+                                muted={true}
+                                volume={this.state.volume}
+                                loop={true}
                             />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
                         </div>
-                    )
-                } else {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer} >
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    height={window.innerHeight}
-                                    // width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <Fiction
-                                setVideo={this.setFictionVideo}
-                                clickVideo={this.clickVideo}
-                                lang={this.state.lang}
-                                title={this.state.title}
-                            />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
-                        </div>
-                    )
-                }
+                        <Fiction
+                            setVideo={this.setVideo}
+                            lang={this.state.lang}
+                        />
+                    </div>
+                )
             }
 
             if (this.props.select === "video") {
-
-                if (window.innerWidth / window.innerHeight > 16 / 9) {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer}>
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <Video setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
+                toShow = (
+                    <div>
+                        <div className={styles.VideoPlayer}>
+                            <Vimeo
+                                autoplay={this.state.play}
+                                video={this.state.teaser}
+                                controls={false}
+                                onLoaded={this.startVideo}
+                                height={window.innerHeight}
+                                showPortrait={!this.state.play}
+                                paused={!this.state.play}
+                                muted={true}
+                                volume={this.state.volume}
+                                loop={true}
+                            />
                         </div>
-                    )
-                } else {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer} >
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    height={window.innerHeight}
-                                    // width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <Video setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
-                        </div>
-                    )
-                }
+                        <Video setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
+                    </div>
+                )
             }
 
             if (this.props.select === "advertising") {
-
-                if (window.innerWidth / window.innerHeight > 16 / 9) {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer}>
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <Advertising setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
+                toShow = (
+                    <div>
+                        <div className={styles.VideoPlayer}>
+                            <Vimeo
+                                autoplay={this.state.play}
+                                video={this.state.teaser}
+                                controls={false}
+                                onLoaded={this.startVideo}
+                                height={window.innerHeight}
+                                showPortrait={!this.state.play}
+                                paused={!this.state.play}
+                                muted={true}
+                                volume={this.state.volume}
+                                loop={true}
+                            />
                         </div>
-                    )
-                } else {
-                    toShow = (
-                        <div>
-                            <div className={styles.VideoPlayer} >
-                                <Vimeo
-                                    autoplay={this.state.play}
-                                    video={this.state.teaser}
-                                    controls={false}
-                                    onLoaded={this.startVideo}
-                                    height={window.innerHeight}
-                                    // width={window.innerWidth}
-                                    showPortrait={!this.state.play}
-                                    paused={!this.state.play}
-                                    muted={true}
-                                    volume={this.state.volume}
-                                    loop={true}
-                                />
-                            </div>
-                            <Advertising setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
-                            <p
-                                className={styles.cliquable}
-                                onMouseUp={this.clickedBackground}
-                                value={[this.state.video]}>
-                            </p>
-                        </div>
-                    )
-                }
+                        <Advertising setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title} />
+                    </div>
+                )
             }
 
             if (this.state.selected) {

@@ -5,10 +5,7 @@
     width: 50vw;
     height: 100vh;
     top: 0;
-    list-style: none;
-    color: white;
     transition: transform 1s;
-    text-decoration: none;
 }
 
 .Link:first-child {
@@ -36,20 +33,6 @@
     padding-right: 7vw;
     font-family: "Monument Extended Regular";
     color: white;
-    list-style: none;
-    font-size: 80%;
-    text-decoration: none;
-    padding-top: 2vh;
-  }
-  
-  .Link p {
-    float: left;
-    padding-left: 3vh;
-    width: 50vw;
-    padding-right: 7vw;
-    font-family: "Monument Extended Regular";
-    color: white;
-    list-style: none;
     font-size: 80%;
     text-decoration: none;
     padding-top: 2vh;

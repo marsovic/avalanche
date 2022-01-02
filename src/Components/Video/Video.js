@@ -23,13 +23,9 @@ class Video extends Component {
         axios
             .get(url, options)
             .then(res => {
-                var projects = res.data.results
-                projects.sort(function (a, b) {
-                    return a.updatedAt < b.updatedAt;
-                })
                 this.setState({
                     loading: false,
-                    projects: projects
+                    projects: res.data.results
                 })
             })
             .catch(function (error) {
@@ -54,12 +50,12 @@ class Video extends Component {
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
                             var temp = null;
-                            if (this.props.title === this.state.projects[key].title) {
+                            if(this.props.title === this.state.projects[key].title) {
                                 temp = (
                                     <li >
                                         <p
                                             className={styles.ProjectBold}
-                                            id={key + 1}
+                                            id={key+1}
                                             key={key + 1}
                                             onMouseEnter={this.props.setVideo}
                                             onMouseUp={this.props.clickVideo}
@@ -73,7 +69,7 @@ class Video extends Component {
                                     <li >
                                         <p
                                             className={styles.Project}
-                                            id={key + 1}
+                                            id={key+1}
                                             key={key + 1}
                                             onMouseEnter={this.props.setVideo}
                                             onMouseUp={this.props.clickVideo}
@@ -92,7 +88,7 @@ class Video extends Component {
         return (
             <div className={styles.News}>
                 <p className={styles.Title}>
-                    Music Video
+                        Music Video
                 </p>
                 <ul className={styles.listStyle}>
                     {toShow}

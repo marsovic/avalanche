@@ -5,18 +5,17 @@
   color: white;
   padding-left: 3vw;
   padding-top: 3vh;
-  height: auto;
-  background-color: black;
+  height: 30vh;
 }
 
 .Title {
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-weight: 900;
-  font-size: 6vmin;
+  font-size: x-large;
   padding-left: 3vw;
   text-transform: uppercase;
-  padding-top: 5vh;
+  
 }
 
 .UnderName {
@@ -24,45 +23,40 @@
   color: white;
   padding-top: 2vh;
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-size: 4vmin;
 =======
   font-size: 3.5vmin;
 >>>>>>> master
+=======
+  font-size: small;
+>>>>>>> parent of 2db92f2... end site
   padding-left: 12vw;
-  width: 88vw;
-  text-align: left;
-  text-justify: inter-word;
-  background-color: black;
+  width: 90vw;
 }
 
 .UnderName a {
   text-decoration: none;
   color: white;
   font-family: "Helvetica Neue";
-  background-color: black;
 } 
-
 
 .Name {
   padding-top: 5vh;
   font-family: "Monument Extended Ultrabold";
   color: white;
   font-weight: 900;
-  font-size: 5vmin;
+  font-size: medium;
   width: 40vw;
   padding-left: 3vw;
-  background-color: black;
 }
 
 .Body {
   font-family: "Monument Extended Ultrabold";
   color: white;
   padding-top: 2vh;
-  font-size: 3.5vmin;
+  font-size: small;
   padding-left: 12vw;
-  width: 88vw;
+  width: 80vw;
   font-weight: 800;
-  text-align: left;
-  text-justify: inter-word;
-  background-color: black;
 }

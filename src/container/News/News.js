@@ -33,9 +33,10 @@ class News extends Component {
                         projects = projects.concat(res2.data.results)
                         projects.sort(function (a, b) {
                             return a.updatedAt < b.updatedAt;
-                        })
+                        });
                         // On garde que les 5 dernières nouveautés
                         projects = projects.slice(0, 4)
+                        console.log(projects)
                         this.setState({
                             loading: false,
                             projects: projects
@@ -108,7 +109,7 @@ class News extends Component {
         return (
             <div className={styles.News}>
                 <p className={styles.Title}>
-                    News
+                        News
                 </p>
                 <ul className={styles.listStyle}>
                     {toShow}

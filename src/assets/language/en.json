@@ -2,11 +2,16 @@
     "About": {
         "titre":"About",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "body":"Passionate about cinema, he is an \"image maniac\". Young, dynamic and inventive, he never stops evolving between clips, short films and commercials, driven by his creative energy.",
 =======
         "body":"We are a creative team & production company based in Paris. We produce music videos, commercials and short films. We tell stories, each of our productions is a new universe we create.",
 >>>>>>> master
         "underName":"Our director, Thibault Cadentem, is the pillar of the Avalanche team. Passionate about cinema, he is an \"image maniac\". Young, dynamic and inventive, he never stops evolving between clips, short films and commercials, driven by his creative energy."
+=======
+        "body":"We are a creative team & production company based in Paris. We produce music videos, commercials and short films. We tell stories, each of our productions is a new universe we create.",
+        "underName":"Our director, Thibaul Cadentem, is the pillar of the avalanche team. Passionate about cinema, he is an \"image maniac\". Young, dynamic and inventive, he never stops evolving between clips, short films and commercials, driven by his creative energy."
+>>>>>>> parent of 2db92f2... end site
     },
     "Contact": {
         "body1":"A QUESTION ? A PROJECT ? ",

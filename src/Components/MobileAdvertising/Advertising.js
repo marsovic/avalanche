@@ -25,13 +25,9 @@ class Advertising extends Component {
         axios
             .get(url, options)
             .then(res => {
-                var projects = res.data.results
-                projects.sort(function (a, b) {
-                    return a.updatedAt < b.updatedAt;
-                })
                 this.setState({
                     loading: false,
-                    projects: projects
+                    projects: res.data.results
                 })
             })
             .catch(function (error) {
@@ -56,10 +52,9 @@ class Advertising extends Component {
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
                             var temp = null;
-                            if (this.props.title === this.state.projects[key].title) {
+                            if(this.props.title === this.state.projects[key].title) {
                                 temp = (
-                                    <div 
-                                        className={styles.UnitVideo}>
+                                    <div className={styles.UnitVideo}>
                                         <div className={styles.Video}>
                                             <Vimeo
                                                 autoplay={false}
@@ -70,8 +65,7 @@ class Advertising extends Component {
                                                 muted={true}
                                             />
                                         </div>
-                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.TitleVideo}>
                                             <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
                                             <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>
@@ -79,8 +73,7 @@ class Advertising extends Component {
                                 )
                             } else {
                                 temp = (
-                                    <div 
-                                        className={styles.UnitVideo}>
+                                    <div className={styles.UnitVideo}>
                                         <div className={styles.Video}>
                                             <Vimeo
                                                 autoplay={false}
@@ -91,8 +84,7 @@ class Advertising extends Component {
                                                 muted={true}
                                             />
                                         </div>
-                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.TitleVideo}>
                                             <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
                                             <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>

@@ -1,68 +1,79 @@
-.News {
-  height: 40vh;
-  margin-left: O;
-  position: relative;
+.VideoPlayer {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 0;
+  background-color: black;
 }
 
-.Title {
-  padding-left: 7vw;
-  padding-right: 50px;
-  padding-top: 16px;
-  font-family: "Monument Extended Ultrabold";
+.ButtonComponent {
+  z-index: 4;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border: 2px solid white;
+  height: 20px;
+  width: 95px;
+  vertical-align: middle;
+  padding-left: 4px;
+  padding-bottom: 25px;
+}
+
+.Button {
+  padding: 2px;
+  margin-top: 5px;
+  align-items: center;
+  font-size: x-small;
+  font-family: "Monument Extended Regular";
   color: white;
-  font-size:x-large;
-  text-decoration: none;
-  text-transform: uppercase;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.Project {
-    color: white;
-    text-transform: uppercase;
-    font-size:small;
-    font-weight: 400;
-    font-family: "Helvetica Roman";
-    margin-top: -40px;
-}
-
-.ProjectBold {
-  color: white;
-  text-transform: uppercase;
-  padding-bottom: 0;
-  font-size:medium;
-  font-weight: 900;
-  font-family: "Helvetica Roman";
-}
-
-.Video {
-  height: 200px; /* 25vh*/
-  width: fit-content;
-  overflow: hidden;
-  margin-top: -22px;
-  background-position: center;
-  z-index: 20;
-}
-
-.listVideo {
-  padding-left: 0;
+.Logo {
+  margin-left: 45vw;
+  margin-top: 40vh;
+  width: 10vw;
+  max-width: auto;
   z-index: 10;
 }
 
-.TitleVideo {
-  overflow: hidden;
-  position: absolute;
-  margin-top: -123px; /* -17vh*/
-  width: 100vw;
-  text-align: center;
+.Nav {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: none;
 }
 
-.TitleVideo p {
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  overflow: hidden;
+.NotBold {
+  color: gray;
+  text-decoration: none;
+  font-weight: 600;
+  width: fit-content;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: medium;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 16px;
 }
 
-.UnitVideo {
-  display: block;
-  box-sizing: border-box;
+.Bold {
+  color: white;
+  font-weight: 900;
+  width: fit-content;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: medium;
+  font-weight: 900;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 16px;
+}
+
+.Main {
+  margin-left: 0px;
+  padding-left: 0px;
 }
