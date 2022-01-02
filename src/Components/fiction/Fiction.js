@@ -44,7 +44,11 @@ class Fiction extends Component {
     }
 
     showUnderText = (e) => {
+<<<<<<< HEAD
         this.setState({ showed: true, title: e.target.attributes[2] })
+=======
+        this.setState({showed: true, title:e.target.attributes[2]})
+>>>>>>> master
         this.props.setVideo(e.target.attributes["value"].value.split(",")[1]);
     }
 
@@ -63,14 +67,22 @@ class Fiction extends Component {
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
                             if (this.props.lang === "fr") {
+<<<<<<< HEAD
                                 if (this.props.title === this.state.title) {
+=======
+                                if(this.props.title === this.state.title) {
+>>>>>>> master
                                     return (
                                         <li >
                                             <p
                                                 className={styles.ProjectFictionTitle}
                                                 id={key + 1}
                                                 key={key + 3}
+<<<<<<< HEAD
                                                 style={{ fontWeight: "900", color: "white" }}
+=======
+                                                style={{fontWeight:"900", color:"white"}}
+>>>>>>> master
                                                 onMouseUp={this.props.clickVideo}
                                                 video={this.state.projects[key].video}
                                                 value={this.state.projects[key].video}>
@@ -80,7 +92,11 @@ class Fiction extends Component {
                                                 className={styles.ProjectFiction}
                                                 id={key + 10}
                                                 key={key + 10}
+<<<<<<< HEAD
                                                 style={{ cursor: "default" }}
+=======
+                                                style={{cursor:"default"}}
+>>>>>>> master
                                             >
                                                 {this.state.projects[key].textFR}
                                             </p>
@@ -88,7 +104,11 @@ class Fiction extends Component {
                                                 className={styles.ProjectUnderFiction}
                                                 id={key + 10}
                                                 key={key + 10}
+<<<<<<< HEAD
                                                 style={{ cursor: "default" }}
+=======
+                                                style={{cursor:"default"}}
+>>>>>>> master
                                             >
                                                 {this.state.projects[key].underTextFr}
                                             </p>
@@ -108,14 +128,22 @@ class Fiction extends Component {
                                     )
                                 }
                             } else {
+<<<<<<< HEAD
                                 if (this.props.title === this.state.title) {
+=======
+                                if(this.props.title === this.state.title){
+>>>>>>> master
                                     return (
                                         <li >
                                             <p
                                                 className={styles.ProjectFictionTitle}
                                                 id={key + 5}
                                                 key={key + 7}
+<<<<<<< HEAD
                                                 style={{ fontWeight: "900", color: "white" }}
+=======
+                                                style={{fontWeight:"900", color:"white"}}
+>>>>>>> master
                                                 onMouseUp={this.props.clickVideo}
                                                 video={this.state.projects[key].video}
                                                 value={this.state.projects[key].video}>
@@ -144,7 +172,11 @@ class Fiction extends Component {
                                                 className={styles.ProjectFictionTitle}
                                                 id={key + 5}
                                                 key={key + 7}
+<<<<<<< HEAD
                                                 style={{ fontWeight: "600", color: "gray" }}
+=======
+                                                style={{fontWeight:"600", color:"gray"}}
+>>>>>>> master
                                                 onMouseEnter={this.showUnderText}
                                                 value={[this.state.projects[key].title, this.state.projects[key].teaser]}>
                                                 {this.state.projects[key].title}

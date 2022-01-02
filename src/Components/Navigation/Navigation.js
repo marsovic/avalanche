@@ -15,10 +15,15 @@ class Navigation extends Component {
                 <Container fluid>
                     <Row>
                         <Col className={styles.Col} md={{ span: 1, offset: 0 }}>
+<<<<<<< HEAD
                             <NavLink to="/" className={styles.Name}>
                                 <div>
                                     Thibault <br/>Cadentem
                                 </div>
+=======
+                            <NavLink to="/">
+                                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
+>>>>>>> master
                             </NavLink>
                         </Col>
 
@@ -32,9 +37,20 @@ class Navigation extends Component {
                                 </div>
                             </NavLink>
                         </Col>
+<<<<<<< HEAD
                         <Col md={{ span: 2, offset: 0 }} className={styles.Col} to="/about">
                             <NavLink className={styles.Link} to="/about">
                                 ABOUT/CONTACT
+=======
+                        <Col md={{ span: 1, offset: 0 }} className={styles.Col} to="/about">
+                            <NavLink className={styles.Link} to="/about">
+                                ABOUT
+                            </NavLink>
+                        </Col>
+                        <Col md={{ span: 1, offset: 0 }} className={styles.Col} id="bottom" to="/contact">
+                            <NavLink className={styles.Link} id="bottom" to="/contact">
+                                CONTACT
+>>>>>>> master
                             </NavLink>
                         </Col>
                         <Col md={{ span: 1, offset: 0 }} >
@@ -70,7 +86,16 @@ class Navigation extends Component {
                     </Col>
                     <Col md={{ span: 1, offset: 0 }} className={styles.Col} to="/about">
                         <NavLink className={styles.Link} to="/about">
+<<<<<<< HEAD
                             A PROPOS/CONTACT
+=======
+                            A PROPOS    
+                        </NavLink>
+                    </Col>
+                    <Col md={{ span: 1, offset: 0 }} className={styles.Col} id="bottom" to="/contact">
+                        <NavLink className={styles.Link} id="bottom" to="/contact">
+                            CONTACT
+>>>>>>> master
                         </NavLink>
                     </Col>
                     <Col md={{ span: 1, offset: 0 }} >

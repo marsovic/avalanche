@@ -33,12 +33,28 @@ class Advertising extends Component {
 
         return (
             <div className={styles.About}>
+<<<<<<< HEAD
                 <Container fluid >
                     <Row className={styles.List}>
                         <Col>
                             <br />
                             <div className={styles.Title}>
                                 {lang.About.titre}
+=======
+            <Container fluid >
+                <div className={styles.Title}>
+                    {lang.About.titre}
+                </div>
+                <Row className={styles.List}>
+                    <Col> 
+                        {toShow}
+                    </Col>
+
+                    <Col>
+                        <div className={styles.Body} >
+                            <div className={styles.Name}>
+                                THIBAULT CADENTEM
+>>>>>>> master
                             </div>
                             {toShow}
                         </Col>
@@ -60,11 +76,19 @@ class Advertising extends Component {
                             </div>
                         </Col>
 
+<<<<<<< HEAD
                         <Col>
                             <img alt="Thibault Cadentem" src={picture} className={styles.Picture} />
                         </Col>
                     </Row>
                 </Container>
+=======
+                    <Col>
+                        <img alt="Thibault Cadentem" src={picture} className={styles.Picture}/>
+                    </Col>
+                </Row>
+            </Container>
+>>>>>>> master
             </div>
         )
 

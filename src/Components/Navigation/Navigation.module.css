@@ -124,6 +124,7 @@ ul {
   .Link {
     font-size: x-small;
   }
+<<<<<<< HEAD
 }
 
 .Name {
@@ -143,4 +144,6 @@ ul {
 .Name:hover {
   color: white;
   text-decoration: none;
+=======
+>>>>>>> master
 }
