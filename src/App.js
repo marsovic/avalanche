@@ -7,6 +7,7 @@ import React, { Component } from "react";
 
 import styles from "./App.module.css"
 
+// PERSONNEL
 class App extends Component {
   render() {
     return (
