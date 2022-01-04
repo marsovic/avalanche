@@ -197,7 +197,6 @@ class MobileMain extends Component {
 
         if (this.state.load) {
             finalShow = (
-
                 <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />)
         } else {
             if (this.props.select === "work") {

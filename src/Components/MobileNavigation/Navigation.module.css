@@ -7,17 +7,15 @@
   position: relative;
   z-index: 10;
   padding-top: 1vh;
-  text-decoration: none;
+  text-decoration:none;
   /*align-items: end;*/
 }
 
 .Logo {
-  height: 8vh;
-  margin-top: 2vh;
-  padding-top: 2vh;
+  height: 40px;
+  margin-top: 25px;
   max-width: auto;
-  margin: 0;
-  padding-left: 7vw;
+  padding-left: 30px;
 }
 
 .Link:first-child {

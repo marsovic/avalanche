@@ -32,7 +32,7 @@ class News extends Component {
                     .then(res2 => {
                         projects = projects.concat(res2.data.results)
                         projects.sort(function (a, b) {
-                            return a.updatedAt < b.updatedAt;
+                            return a.updatedAt > b.updatedAt;
                         })
                         // On garde que les 5 dernières nouveautés
                         projects = projects.slice(0, 4)
@@ -71,7 +71,7 @@ class News extends Component {
                             var temp = null;
                             if(this.props.title === this.state.projects[key].title) {
                                 temp = (
-                                    <li >
+                                    <div >
                                         <p
                                             className={styles.ProjectBold}
                                             id={key+1}
@@ -81,11 +81,11 @@ class News extends Component {
                                             value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
                                             {this.state.projects[key].author} - {this.state.projects[key].title}
                                         </p>
-                                    </li>
+                                    </div>
                                 )
                             } else {
                                 temp = (
-                                    <li >
+                                    <div >
                                         <p
                                             className={styles.Project}
                                             id={key+1}
@@ -95,7 +95,7 @@ class News extends Component {
                                             value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
                                             {this.state.projects[key].author} - {this.state.projects[key].title}
                                         </p>
-                                    </li>
+                                    </div>
                                 )
                             }
                             
@@ -110,9 +110,9 @@ class News extends Component {
                 <p className={styles.Title}>
                     News
                 </p>
-                <ul className={styles.listStyle}>
+                <div className={styles.listStyle}>
                     {toShow}
-                </ul>
+                </div>
             </div>
         );
     }
