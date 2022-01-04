@@ -13,12 +13,10 @@
 }
 
 .Logo {
-  height: 8vh;
-  margin-top: 2vh;
-  padding-top: 2vh;
+  height: 40px;
+  margin-top: 25px;
   max-width: auto;
-  margin: 0;
-  margin-left: 5vw;
+  margin-left: 30px;
 }
 
 .Link:first-child {

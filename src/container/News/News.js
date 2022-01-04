@@ -32,7 +32,7 @@ class News extends Component {
                     .then(res2 => {
                         projects = projects.concat(res2.data.results)
                         projects.sort(function (a, b) {
-                            return a.updatedAt < b.updatedAt;
+                            return a.updatedAt > b.updatedAt;
                         })
                         // On garde que les 5 dernières nouveautés
                         projects = projects.slice(0, 4)
