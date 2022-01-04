@@ -59,7 +59,9 @@ class Advertising extends Component {
                             if (this.props.title === this.state.projects[key].title) {
                                 temp = (
                                     <div 
-                                        className={styles.UnitVideo}>
+                                        className={styles.UnitVideo}
+                                        onMouseEnter={this.props.setVideo}
+                                        data-video={this.state.projects[key].video}>
                                         <div className={styles.Video}>
                                             <Vimeo
                                                 autoplay={false}
@@ -80,7 +82,9 @@ class Advertising extends Component {
                             } else {
                                 temp = (
                                     <div 
-                                        className={styles.UnitVideo}>
+                                        className={styles.UnitVideo}
+                                        onMouseEnter={this.props.setVideo}
+                                        data-video={this.state.projects[key].video}>
                                         <div className={styles.Video}>
                                             <Vimeo
                                                 autoplay={false}
