@@ -10,7 +10,6 @@ import News from "../News/News"
 import Fiction from "../../Components/fiction/Fiction";
 import Contact from "../../Components/Contact/Contact";
 import logoAvalanche from "../../assets/Images/logo.png"
-
 import styles from "./Main.module.css"
 import OverWindow from "../../Components/OverWindow/OverWindow";
 
@@ -361,7 +360,6 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
-                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
@@ -422,7 +420,6 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
-                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
@@ -442,7 +439,6 @@ class Main extends Component {
             }
 
             if (this.props.select === "advertising") {
-
                 if (window.innerWidth / window.innerHeight > 16 / 9) {
                     toShow = (
                         <div>
@@ -478,7 +474,6 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
-                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
