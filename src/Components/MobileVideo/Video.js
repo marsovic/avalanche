@@ -26,7 +26,11 @@ class Video extends Component {
             .then(res => {
                 var projects = res.data.results
                 projects.sort(function (a, b) {
-                    return a.updatedAt < b.updatedAt;
+                    if(a.updatedAt < b.updatedAt) {
+                        return 1
+                    } else {
+                        return -1
+                    }
                 })
                 this.setState({
                     loading: false,

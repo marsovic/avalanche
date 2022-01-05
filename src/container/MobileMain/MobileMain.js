@@ -117,7 +117,11 @@ class MobileMain extends Component {
                             .then(res2 => {
                                 projects = projects.concat(res2.data.results)
                                 projects.sort(function (a, b) {
-                                    return a.updatedAt < b.updatedAt;
+                                    if(a.updatedAt < b.updatedAt) {
+                                        return 1
+                                    } else {
+                                        return -1
+                                    }
                                 });
                                 this.setState({
                                     title: projects[0].title,
@@ -146,7 +150,11 @@ class MobileMain extends Component {
                     .then(res => {
                         projects = res.data.results
                         projects.sort(function (a, b) {
-                            return a.updatedAt < b.updatedAt;
+                            if(a.updatedAt < b.updatedAt) {
+                                return 1
+                            } else {
+                                return -1
+                            }
                         });
                         this.setState({
                             title: projects[0].title,
@@ -170,7 +178,11 @@ class MobileMain extends Component {
                     .then(res => {
                         projects = res.data.results
                         projects.sort(function (a, b) {
-                            return a.updatedAt < b.updatedAt;
+                            if(a.updatedAt < b.updatedAt) {
+                                return 1
+                            } else {
+                                return -1
+                            }
                         });
                         this.setState({
                             title: projects[0].title,
