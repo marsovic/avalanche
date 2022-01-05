@@ -50,6 +50,7 @@ class Advertising extends Component {
 
             )
         } else {
+            console.log(this.props)
             if (this.state.projects !== null) {
                 toShow = Object.keys(this.state.projects)
                     .map(key => {

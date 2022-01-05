@@ -92,7 +92,7 @@ class Fiction extends Component {
                                             <p
                                                 className={styles.ProjectUnderFiction}
                                                 id={key + 10}
-                                                key={key + 10}
+                                                key={key + 13}
                                                 style={{ cursor: "default" }}
                                             >
                                                 {this.state.projects[key].underTextFr}
@@ -103,6 +103,8 @@ class Fiction extends Component {
                                     return (
                                         <li key={this.state.title.length}>
                                             <p
+                                                className={styles.ProjectFictionTitle}
+                                                style={{ fontWeight: "600", color: "gray" }}
                                                 id={key + 1}
                                                 key={key + 3}
                                                 onMouseEnter={this.showUnderText}
@@ -129,14 +131,16 @@ class Fiction extends Component {
                                             <p
                                                 className={styles.ProjectFiction}
                                                 id={key + 10}
-                                                key={key + 10}
+                                                key={key + 11}
+                                                style={{ cursor: "default" }}
                                             >
                                                 {this.state.projects[key].textEN}
                                             </p>
                                             <p
                                                 className={styles.ProjectUnderFiction}
                                                 id={key + 10}
-                                                key={key + 10}
+                                                key={key + 12}
+                                                style={{ cursor: "default" }}
                                             >
                                                 {this.state.projects[key].underTextEn}
                                             </p>
