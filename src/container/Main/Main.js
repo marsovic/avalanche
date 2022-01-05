@@ -46,6 +46,7 @@ class Main extends Component {
 
     clickVideo = (event) => {
         sessionStorage.setItem("selected", "a")
+        console.log(event.target.attributes["value"].nodeValue.split(","))
         this.setState({
             video: event.target.attributes["value"].nodeValue.split(",")[0],
             teaser: event.target.attributes["value"].nodeValue.split(",")[1],
@@ -499,6 +500,7 @@ class Main extends Component {
             }
 
             if (this.state.selected) {
+                console.log(this.state.video)
                 finalShow = (
                     <OverWindow
                         urlVideo={this.state.video}
