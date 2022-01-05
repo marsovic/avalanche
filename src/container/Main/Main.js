@@ -282,7 +282,6 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
-                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
