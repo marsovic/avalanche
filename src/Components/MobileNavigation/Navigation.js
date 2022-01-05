@@ -31,13 +31,13 @@ class Navigation extends Component {
 
         return (
             <div className={styles.Navigation}>
-                <ul>
+                <div className="listHor">
                     <NavLink to="/">
                         <img className={styles.Logo} src={logoAvalanche} alt={"Thibault Cadentem"} />
                     </NavLink>
                     
                     {toShow}
-                </ul>
+                </div>
             </div>
         )
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Navigation.module.css"
 import { NavLink } from "react-router-dom";
-import logoAvalanche from "../../assets/Images/logo.png"
 import { Container, Row, Col } from 'react-bootstrap';
 
 class Navigation extends Component {
@@ -17,7 +16,7 @@ class Navigation extends Component {
                         <Col className={styles.Col} md={{ span: 1, offset: 0 }}>
                             <NavLink to="/" className={styles.Name}>
                                 <div>
-                                    Thibault <br/>Cadentem
+                                    Thibault <br />Cadentem
                                 </div>
                             </NavLink>
                         </Col>
@@ -32,13 +31,13 @@ class Navigation extends Component {
                                 </div>
                             </NavLink>
                         </Col>
-                        <Col md={{ span: 2, offset: 0 }} className={styles.Col} to="/about">
+                        <Col md={{ span: 1, offset: 1 }} className={styles.Col} to="/about">
                             <NavLink className={styles.Link} to="/about">
                                 ABOUT/CONTACT
                             </NavLink>
                         </Col>
                         <Col md={{ span: 1, offset: 0 }} >
-                            <NavLink className={styles.LinkLang} style={{marginTop:"6vh",marginLeft:"2vw",border: "2px solid white", marginRight:"4vw", padding:"2px", alignItems:"center", fontSize: 'small', textTransform: "uppercase"}} onClick={this.props.handleLang} to="/">
+                            <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "2px solid white", marginRight: "4vw", padding: "2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
                                 {lang}
                             </NavLink>
                         </Col>
@@ -51,35 +50,37 @@ class Navigation extends Component {
             lang = "en"
             toRet = (
                 <Container fluid>
-                <Row>
-                    <Col className={styles.Col} md={{ span: 1, offset: 0 }}>
-                        <NavLink to="/">
-                            <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
-                        </NavLink>
-                    </Col>
+                    <Row>
+                        <Col className={styles.Col} md={{ span: 1, offset: 0 }}>
+                            <NavLink to="/" className={styles.Name}>
+                                <div>
+                                    Thibault <br />Cadentem
+                                </div>
+                            </NavLink>
+                        </Col>
 
-                    <Col md={{ span: 1, offset: 7 }} className={styles.Col}>
-                        <NavLink className={styles.Dropdown} to="#">
-                            ACTIVITES
-                            <div className={styles.DropdownContent}>
-                                <NavLink to="/video">VIDEOS CLIPS</NavLink>
-                                <NavLink to="/advertising">PUBLICITES</NavLink>
-                                <NavLink to="/fiction">FICTION</NavLink>
-                            </div>
-                        </NavLink>
-                    </Col>
-                    <Col md={{ span: 1, offset: 0 }} className={styles.Col} to="/about">
-                        <NavLink className={styles.Link} to="/about">
-                            A PROPOS/CONTACT
-                        </NavLink>
-                    </Col>
-                    <Col md={{ span: 1, offset: 0 }} >
-                        <NavLink className={styles.LinkLang} style={{marginTop:"6vh",marginLeft:"2vw",border: "2px solid white", marginRight:"4vw", padding:"2px", alignItems:"center", fontSize: 'small', textTransform: "uppercase"}} onClick={this.props.handleLang} to="/">
-                            {lang}
-                        </NavLink>
-                    </Col>
-                </Row>
-            </Container>
+                        <Col md={{ span: 1, offset: 7 }} className={styles.Col}>
+                            <NavLink className={styles.Dropdown} to="#">
+                                ACTIVITES
+                                <div className={styles.DropdownContent}>
+                                    <NavLink to="/video">VIDEOS CLIPS</NavLink>
+                                    <NavLink to="/advertising">PUBLICITES</NavLink>
+                                    <NavLink to="/fiction">FICTION</NavLink>
+                                </div>
+                            </NavLink>
+                        </Col>
+                        <Col md={{ span: 1, offset: 1 }} className={styles.Col} to="/about">
+                            <NavLink className={styles.Link} to="/about">
+                                A PROPOS/CONTACT
+                            </NavLink>
+                        </Col>
+                        <Col md={{ span: 1, offset: 0 }} >
+                            <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "2px solid white", marginRight: "4vw", padding: "2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
+                                {lang}
+                            </NavLink>
+                        </Col>
+                    </Row>
+                </Container>
             )
         }
 
