@@ -30,7 +30,6 @@ class Fiction extends Component {
                 projects.sort(function (a, b) {
                     return a.updatedAt < b.updatedAt;
                 })
-                // console.log(this.state.title)
                 if(this.state.title == null) {
                     this.setState({
                         loading: false,
@@ -38,7 +37,6 @@ class Fiction extends Component {
                         title: projects[0].title
                     })
                 } else {
-                    console.log(this.state)
                 }
             })
             .catch(function (error) {

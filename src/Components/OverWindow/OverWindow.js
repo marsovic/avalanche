@@ -17,8 +17,8 @@ class OverWindow extends Component {
         const { width, height } = this.props.size
         const newHWidth = width
         const newHeight = height
-
-
+        
+        if(this.props.urlVideo !== null ) {
         return (
             <div className={styles.OverWindow}>
                 <div className={styles.Video}>
@@ -45,6 +45,10 @@ class OverWindow extends Component {
                 </Container>
             </div>
         )
+        }
+        else {
+            return null;
+        }
 
     }
 }

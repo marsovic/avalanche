@@ -22,7 +22,7 @@ class Main extends Component {
         volume: 0,
         lang: null,
         selected: false,
-        load: true
+        load: false
     }
 
     setVideo = (event) => {
@@ -33,7 +33,7 @@ class Main extends Component {
             }
             document.getElementById(event._targetInst.key).className = styles.Bold
             const selectedVideo = event._targetInst.memoizedProps.value[1]
-            if (selectedVideo !== this.state.teaser && selectedVideo !== undefined) {
+            if (selectedVideo !== this.state.teaser && selectedVideo !== null && selectedVideo !== undefined) {
                 this.setState({ teaser: selectedVideo, play: false, video: event._targetInst.memoizedProps.value[0] })
             }
         }
@@ -46,7 +46,6 @@ class Main extends Component {
 
     clickVideoAdv = (event) => {
         sessionStorage.setItem("selected", "a")
-        console.log(event.target.attributes["value"].nodeValue.split(","))
         this.setState({
             video: event.target.attributes["value"].nodeValue.split(",")[0],
             teaser: event.target.attributes["value"].nodeValue.split(",")[1],
@@ -66,7 +65,6 @@ class Main extends Component {
     }
 
     clickedBackground = (e) => {
-        console.log(e.target.attributes)
         this.setState({
             video: e.target.attributes["value"].value,
             play: false,
@@ -252,12 +250,13 @@ class Main extends Component {
         var toShow = null;
         var finalShow = null;
 
-        if (this.state.load === true) {
+        if (this.state.load === true || this.state.teaser === null || this.state.teaser === undefined ) {
             finalShow = (
-                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />)
+                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
+            )
+
         } else {
             if (this.props.select === "work") {
-
                 if (window.innerWidth / window.innerHeight > 16 / 9) {
                     toShow = (
                         <div>
