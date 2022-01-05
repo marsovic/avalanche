@@ -26,7 +26,7 @@ class Advertising extends Component {
             .then(res => {
                 var projects = res.data.results
                 projects.sort(function (a, b) {
-                    return a.updatedAt > b.updatedAt;
+                    return a.updatedAt < b.updatedAt;
                 })
                 this.setState({
                     loading: false,
