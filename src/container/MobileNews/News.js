@@ -33,7 +33,11 @@ class News extends Component {
                     .then(res2 => {
                         projects = projects.concat(res2.data.results)
                         projects.sort(function (a, b) {
-                            return a.updatedAt < b.updatedAt;
+                            if(a.updatedAt < b.updatedAt) {
+                                return 1
+                            } else {
+                                return -1
+                            }
                         })
                         // On garde que les 5 dernières nouveautés
                         projects = projects.slice(0, 4)
@@ -74,7 +78,7 @@ class News extends Component {
                                 temp = (
                                     <div
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video} >
                                             <Vimeo
@@ -96,7 +100,7 @@ class News extends Component {
                                 temp = (
                                     <div
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video}>
                                             <Vimeo

@@ -82,6 +82,7 @@ ul {
 .DropdownContent a:hover {
   font-family: "Monument Extended Ultrabold";
   text-decoration: none;
+  color: white;
 }
 
 .Dropdown {

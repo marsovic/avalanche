@@ -17,7 +17,6 @@ class MobileMain extends Component {
     state = {
         video: null,
         teaser: null,
-        play: false,
         volume: 0,
         lang: null,
         selected: false,
@@ -25,10 +24,11 @@ class MobileMain extends Component {
     }
 
     setVideo = (event) => {
+        sessionStorage.setItem("selected", "a")
         if (event.currentTarget.dataset.video) { 
             const selectedVideo = event.currentTarget.dataset.video
-            if (selectedVideo !== this.state.video && selectedVideo !== undefined) {
-                this.setState({ video: selectedVideo, selected: true ,play: false })
+            if (selectedVideo !== undefined) {
+                this.setState({ video: selectedVideo, selected: true })
             }
         }
         event.stopPropagation()
@@ -39,7 +39,6 @@ class MobileMain extends Component {
         this.setState({
             video: event.target.attributes["value"].nodeValue.split(",")[0],
             teaser: event.target.attributes["value"].nodeValue.split(",")[1],
-            play: false,
             selected: true
         })
     }
@@ -118,7 +117,11 @@ class MobileMain extends Component {
                             .then(res2 => {
                                 projects = projects.concat(res2.data.results)
                                 projects.sort(function (a, b) {
-                                    return a.updatedAt < b.updatedAt;
+                                    if(a.updatedAt < b.updatedAt) {
+                                        return 1
+                                    } else {
+                                        return -1
+                                    }
                                 });
                                 this.setState({
                                     title: projects[0].title,
@@ -147,7 +150,11 @@ class MobileMain extends Component {
                     .then(res => {
                         projects = res.data.results
                         projects.sort(function (a, b) {
-                            return a.updatedAt < b.updatedAt;
+                            if(a.updatedAt < b.updatedAt) {
+                                return 1
+                            } else {
+                                return -1
+                            }
                         });
                         this.setState({
                             title: projects[0].title,
@@ -171,7 +178,11 @@ class MobileMain extends Component {
                     .then(res => {
                         projects = res.data.results
                         projects.sort(function (a, b) {
-                            return a.updatedAt < b.updatedAt;
+                            if(a.updatedAt < b.updatedAt) {
+                                return 1
+                            } else {
+                                return -1
+                            }
                         });
                         this.setState({
                             title: projects[0].title,

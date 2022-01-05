@@ -26,7 +26,11 @@ class Video extends Component {
             .then(res => {
                 var projects = res.data.results
                 projects.sort(function (a, b) {
-                    return a.updatedAt < b.updatedAt;
+                    if(a.updatedAt < b.updatedAt) {
+                        return 1
+                    } else {
+                        return -1
+                    }
                 })
                 this.setState({
                     loading: false,
@@ -59,7 +63,7 @@ class Video extends Component {
                                 temp = (
                                     <div 
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video} >
                                             <Vimeo
@@ -71,8 +75,7 @@ class Video extends Component {
                                                 muted={true}
                                             />
                                         </div>
-                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.TitleVideo}>
                                             <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
                                             <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>
@@ -82,7 +85,7 @@ class Video extends Component {
                                 temp = (
                                     <div 
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video}>
                                             <Vimeo
@@ -94,8 +97,7 @@ class Video extends Component {
                                                 muted={true}
                                             />
                                         </div>
-                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.TitleVideo}>
                                             <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
                                             <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>

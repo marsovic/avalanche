@@ -28,7 +28,11 @@ class Fiction extends Component {
             .then(res => {
                 var projects = res.data.results
                 projects.sort(function (a, b) {
-                    return a.updatedAt > b.updatedAt;
+                    if(a.updatedAt < b.updatedAt) {
+                        return 1
+                    } else {
+                        return -1
+                    }
                 })
                 this.setState({
                     loading: false,
@@ -44,7 +48,7 @@ class Fiction extends Component {
     }
 
     showUnderText = (e) => {
-        this.setState({showed: true, title:e.target.attributes[2]})
+        this.setState({showed: true, title:e.target.attributes[2].value.split(",")[0]})
         this.props.setVideo(e.target.attributes["value"].value.split(",")[1]);
     }
 
@@ -63,7 +67,7 @@ class Fiction extends Component {
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
                             if (this.props.lang === "fr") {
-                                if(this.props.title === this.state.title) {
+                                if(this.state.projects[key].title === this.state.title) {
                                     return (
                                         <li >
                                             <p
@@ -108,7 +112,7 @@ class Fiction extends Component {
                                     )
                                 }
                             } else {
-                                if(this.props.title === this.state.title){
+                                if(this.state.projects[key].title=== this.state.title){
                                     return (
                                         <li >
                                             <p
