@@ -16,7 +16,6 @@ class MobileMain extends Component {
     state = {
         video: null,
         teaser: null,
-        play: false,
         volume: 0,
         lang: null,
         selected: false,
@@ -24,10 +23,13 @@ class MobileMain extends Component {
     }
 
     setVideo = (event) => {
+        event.stopPropagation();
+        sessionStorage.setItem("selected", "a")
         if (event.currentTarget.dataset.video) { 
             const selectedVideo = event.currentTarget.dataset.video
-            if (selectedVideo !== this.state.video && selectedVideo !== undefined) {
-                this.setState({ video: selectedVideo, selected: true ,play: false })
+            console.log(selectedVideo)
+            if (selectedVideo !== undefined) {
+                this.setState({ video: selectedVideo, selected: true})
             }
         }
         event.stopPropagation()
@@ -38,14 +40,14 @@ class MobileMain extends Component {
         this.setState({
             video: event.target.attributes["value"].nodeValue.split(",")[0],
             teaser: event.target.attributes["value"].nodeValue.split(",")[1],
-            play: false,
             selected: true
         })
     }
 
     handleBack = (event) => {
         sessionStorage.setItem("selected", "b")
-        this.setState({ selected: false })
+        event.stopPropagation();
+        this.setState({ selected: false, video: null})
     }
 
     handleLang = (event) => {
@@ -108,6 +110,7 @@ class MobileMain extends Component {
             }
 
             if (this.props.select === "work") {
+
                 axios
                     .get(urlVideo, options)
                     .then(res => {
@@ -123,6 +126,7 @@ class MobileMain extends Component {
                                         return -1
                                     }
                                 });
+                                console.log("coucou")
                                 this.setState({
                                     title: projects[0].title,
                                     teaser: projects[0].teaser,
@@ -208,13 +212,17 @@ class MobileMain extends Component {
 
         if (this.state.load) {
             finalShow = (
-
-                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />)
+                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
+            )
         } else {
             if (this.props.select === "work") {
                 toShow = (
                     <div className={styles.Main}>
-                        <News setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title}/>
+                        <News 
+                            setVideo={this.setVideo} 
+                            clickVideo={this.clickVideo} 
+                            title={this.state.title} 
+                        />
                     </div>
                 )
             }
@@ -281,9 +289,6 @@ class MobileMain extends Component {
                                     handleLang={this.handleLang}
                                 />
                                 {toShow}
-                            </div>
-                            <div className={styles.mobile}>
-
                             </div>
                         </div>
                     )

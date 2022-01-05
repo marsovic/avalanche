@@ -64,7 +64,7 @@ class Advertising extends Component {
                                 temp = (
                                     <div 
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video}>
                                             <Vimeo
@@ -76,8 +76,7 @@ class Advertising extends Component {
                                                 muted={true}
                                             />
                                         </div>
-                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.TitleVideo}>
                                             <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
                                             <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>
@@ -87,7 +86,7 @@ class Advertising extends Component {
                                 temp = (
                                     <div 
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video}>
                                             <Vimeo
@@ -99,8 +98,7 @@ class Advertising extends Component {
                                                 muted={true}
                                             />
                                         </div>
-                                        <div className={styles.TitleVideo} onMouseEnter={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                        <div className={styles.TitleVideo}>
                                             <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
                                             <p className={styles.Project}> {this.state.projects[key].author} </p>
                                         </div>

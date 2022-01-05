@@ -63,7 +63,7 @@ class Video extends Component {
                                 temp = (
                                     <div 
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video} >
                                             <Vimeo
@@ -86,7 +86,7 @@ class Video extends Component {
                                 temp = (
                                     <div 
                                         className={styles.UnitVideo}
-                                        onMouseEnter={this.props.setVideo}
+                                        onTouchStart={this.props.setVideo}
                                         data-video={this.state.projects[key].video}>
                                         <div className={styles.Video}>
                                             <Vimeo
