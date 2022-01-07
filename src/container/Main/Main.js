@@ -44,16 +44,6 @@ class Main extends Component {
         this.setState({ teaser: vid, play: false })
     }
 
-    clickVideoAdv = (event) => {
-        sessionStorage.setItem("selected", "a")
-        this.setState({
-            video: event.target.attributes["value"].nodeValue.split(",")[0],
-            teaser: event.target.attributes["value"].nodeValue.split(",")[1],
-            play: false,
-            selected: true
-        })
-    }
-
     clickVideo = (event) => {
         sessionStorage.setItem("selected", "a")
         this.setState({

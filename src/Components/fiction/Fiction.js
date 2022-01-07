@@ -51,9 +51,9 @@ class Fiction extends Component {
     }
 
     showUnderText = (e) => {
-        e.preventDefault()
+        this.setState({ showed: true ,title: e.target.attributes["value"].value.split(",")[0] })
         this.props.setVideo(e.target.attributes["value"].value.split(",")[1]);
-        this.setState({ showed: true ,title: e.target.attributes[2].value.split(",")[0] })
+        
     }
 
     render() {
@@ -114,7 +114,7 @@ class Fiction extends Component {
                                                     onMouseUp={this.props.clickVideo}
                                                     onMouseEnter={this.showUnderText}
                                                     video={this.state.projects[key].video}
-                                                    value={this.state.projects[key].video}>
+                                                    value={[this.state.projects[key].title, this.state.projects[key].teaser]}>
                                                     {this.state.projects[key].title}
                                                 </p>
                                             </li>
