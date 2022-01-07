@@ -9,6 +9,7 @@ class Fiction extends Component {
         rerender: false,
         loading: true,
         showed: false,
+        text: false,
         title: null
     };
 
@@ -28,7 +29,7 @@ class Fiction extends Component {
             .then(res => {
                 var projects = res.data.results
                 projects.sort(function (a, b) {
-                    if(a.updatedAt < b.updatedAt) {
+                    if (a.updatedAt < b.updatedAt) {
                         return 1
                     } else {
                         return -1
@@ -48,7 +49,7 @@ class Fiction extends Component {
     }
 
     showUnderText = (e) => {
-        this.setState({showed: true, title:e.target.attributes[2].value.split(",")[0]})
+        this.setState({ showed: true, title: e.target.attributes[2].value.split(",")[0] })
         this.props.setVideo(e.target.attributes["value"].value.split(",")[1]);
     }
 
@@ -67,37 +68,55 @@ class Fiction extends Component {
                     .map(key => {
                         return [...Array(this.state.projects[key])].map((_, i) => {
                             if (this.props.lang === "fr") {
-                                if(this.state.projects[key].title === this.state.title) {
-                                    return (
-                                        <li >
-                                            <p
-                                                className={styles.ProjectFictionTitle}
-                                                id={key + 1}
-                                                key={key + 3}
-                                                style={{fontWeight:"900", color:"white"}}
-                                                onMouseUp={this.props.clickVideo}
-                                                video={this.state.projects[key].video}
-                                                value={this.state.projects[key].video}>
-                                                {this.state.projects[key].title}
-                                            </p>
-                                            <p
-                                                className={styles.ProjectFiction}
-                                                id={key + 10}
-                                                key={key + 10}
-                                                style={{cursor:"default"}}
-                                            >
-                                                {this.state.projects[key].textFR}
-                                            </p>
-                                            <p
-                                                className={styles.ProjectUnderFiction}
-                                                id={key + 10}
-                                                key={key + 10}
-                                                style={{cursor:"default"}}
-                                            >
-                                                {this.state.projects[key].underTextFr}
-                                            </p>
-                                        </li>
-                                    )
+                                if (this.state.projects[key].title === this.state.title) {
+                                    if (this.state.showed) {
+                                        return (
+                                            <li >
+                                                <p
+                                                    className={styles.ProjectFictionTitle}
+                                                    id={key + 1}
+                                                    key={key + 3}
+                                                    style={{ fontWeight: "900", color: "white" }}
+                                                    onMouseUp={this.props.clickVideo}
+                                                    video={this.state.projects[key].video}
+                                                    value={this.state.projects[key].video}>
+                                                    {this.state.projects[key].title}
+                                                </p>
+                                                <p
+                                                    className={styles.ProjectFiction}
+                                                    id={key + 10}
+                                                    key={key + 10}
+                                                    style={{ cursor: "default" }}
+                                                >
+                                                    {this.state.projects[key].textFR}
+                                                </p>
+                                                <p
+                                                    className={styles.ProjectUnderFiction}
+                                                    id={key + 10}
+                                                    key={key + 10}
+                                                    style={{ cursor: "default" }}
+                                                >
+                                                    {this.state.projects[key].underTextFr}
+                                                </p>
+                                            </li>
+                                        )
+                                    } else {
+                                        return (
+                                            <li >
+                                                <p
+                                                    className={styles.ProjectFictionTitle}
+                                                    id={key + 1}
+                                                    key={key + 3}
+                                                    style={{ fontWeight: "900", color: "white" }}
+                                                    onMouseUp={this.props.clickVideo}
+                                                    onMouseEnter={this.showUnderText}
+                                                    video={this.state.projects[key].video}
+                                                    value={this.state.projects[key].video}>
+                                                    {this.state.projects[key].title}
+                                                </p>
+                                            </li>
+                                        )
+                                    }
                                 } else {
                                     return (
                                         <li className={styles.ProjectFictionTitle}>
@@ -105,6 +124,7 @@ class Fiction extends Component {
                                                 id={key + 1}
                                                 key={key + 3}
                                                 onMouseEnter={this.showUnderText}
+                                                video={this.state.projects[key].video}
                                                 value={[this.state.projects[key].title, this.state.projects[key].teaser]}>
                                                 {this.state.projects[key].title}
                                             </p>
@@ -112,44 +132,63 @@ class Fiction extends Component {
                                     )
                                 }
                             } else {
-                                if(this.state.projects[key].title=== this.state.title){
-                                    return (
-                                        <li >
-                                            <p
-                                                className={styles.ProjectFictionTitle}
-                                                id={key + 5}
-                                                key={key + 7}
-                                                style={{fontWeight:"900", color:"white"}}
-                                                onMouseUp={this.props.clickVideo}
-                                                video={this.state.projects[key].video}
-                                                value={this.state.projects[key].video}>
-                                                {this.state.projects[key].title}
-                                            </p>
-                                            <p
-                                                className={styles.ProjectFiction}
-                                                id={key + 10}
-                                                key={key + 10}
-                                            >
-                                                {this.state.projects[key].textEN}
-                                            </p>
-                                            <p
-                                                className={styles.ProjectUnderFiction}
-                                                id={key + 10}
-                                                key={key + 10}
-                                            >
-                                                {this.state.projects[key].underTextEn}
-                                            </p>
-                                        </li>
-                                    )
+                                if (this.state.projects[key].title === this.state.title) {
+                                    if (this.state.showed) {
+                                        return (
+                                            <li >
+                                                <p
+                                                    className={styles.ProjectFictionTitle}
+                                                    id={key + 1}
+                                                    key={key + 3}
+                                                    style={{ fontWeight: "900", color: "white" }}
+                                                    onMouseUp={this.props.clickVideo}
+                                                    video={this.state.projects[key].video}
+                                                    value={this.state.projects[key].video}>
+                                                    {this.state.projects[key].title}
+                                                </p>
+                                                <p
+                                                    className={styles.ProjectFiction}
+                                                    id={key + 10}
+                                                    key={key + 10}
+                                                    style={{ cursor: "default" }}
+                                                >
+                                                    {this.state.projects[key].textFR}
+                                                </p>
+                                                <p
+                                                    className={styles.ProjectUnderFiction}
+                                                    id={key + 10}
+                                                    key={key + 10}
+                                                    style={{ cursor: "default" }}
+                                                >
+                                                    {this.state.projects[key].underTextFr}
+                                                </p>
+                                            </li>
+                                        )
+                                    } else {
+                                        return (
+                                            <li >
+                                                <p
+                                                    className={styles.ProjectFictionTitle}
+                                                    id={key + 1}
+                                                    key={key + 3}
+                                                    style={{ fontWeight: "900", color: "white" }}
+                                                    onMouseUp={this.props.clickVideo}
+                                                    onMouseEnter={this.showUnderText}
+                                                    video={this.state.projects[key].video}
+                                                    value={this.state.projects[key].video}>
+                                                    {this.state.projects[key].title}
+                                                </p>
+                                            </li>
+                                        )
+                                    }
                                 } else {
                                     return (
-                                        <li >
+                                        <li className={styles.ProjectFictionTitle}>
                                             <p
-                                                className={styles.ProjectFictionTitle}
-                                                id={key + 5}
-                                                key={key + 7}
-                                                style={{fontWeight:"600", color:"gray"}}
+                                                id={key + 1}
+                                                key={key + 3}
                                                 onMouseEnter={this.showUnderText}
+                                                video={this.state.projects[key].video}
                                                 value={[this.state.projects[key].title, this.state.projects[key].teaser]}>
                                                 {this.state.projects[key].title}
                                             </p>
@@ -157,12 +196,11 @@ class Fiction extends Component {
                                     )
                                 }
                             }
-
-                        })
+                        }
+                        )
                     })
             }
         }
-
         return (
             <div className={styles.News}>
                 <p className={styles.Title}>
