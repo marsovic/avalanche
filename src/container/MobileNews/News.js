@@ -76,10 +76,7 @@ class News extends Component {
                             var temp = null;
                             if (this.props.title === this.state.projects[key].title) {
                                 temp = (
-                                    <div
-                                        className={styles.UnitVideo}
-                                        onTouchStart={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                    <div className={styles.UnitVideo}>
                                         <div className={styles.Video} >
                                             <Vimeo
                                                 autoplay={false}
@@ -91,17 +88,14 @@ class News extends Component {
                                             />
                                         </div>
                                         <div className={styles.TitleVideo}>
-                                            <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
-                                            <p className={styles.Project}> {this.state.projects[key].author} </p>
+                                            <p className={styles.ProjectBold} onTouchStart={this.props.setVideo} data-video={this.state.projects[key].video}> {this.state.projects[key].title} </p>
+                                            <p className={styles.Project} onTouchStart={this.props.setVideo} data-video={this.state.projects[key].video}> {this.state.projects[key].author} </p>
                                         </div>
                                     </div>
                                 ) // event._targetInst.return.return.stateNode.id
                             } else {
                                 temp = (
-                                    <div
-                                        className={styles.UnitVideo}
-                                        onTouchStart={this.props.setVideo}
-                                        data-video={this.state.projects[key].video}>
+                                    <div className={styles.UnitVideo}>
                                         <div className={styles.Video}>
                                             <Vimeo
                                                 autoplay={false}
@@ -114,8 +108,8 @@ class News extends Component {
                                             />
                                         </div>
                                         <div className={styles.TitleVideo}>
-                                            <p className={styles.ProjectBold}> {this.state.projects[key].title} </p>
-                                            <p className={styles.Project}> {this.state.projects[key].author} </p>
+                                            <p className={styles.ProjectBold} onTouchStart={this.props.setVideo} data-video={this.state.projects[key].video}> {this.state.projects[key].title} </p>
+                                            <p className={styles.Project} onTouchStart={this.props.setVideo} data-video={this.state.projects[key].video}> {this.state.projects[key].author} </p>
                                         </div>
                                     </div>
                                 )

@@ -20,17 +20,23 @@
     text-transform: uppercase;
     font-size:small;
     font-weight: 400;
+    width: fit-content;
+    margin: auto;
     font-family: "Helvetica Roman";
     margin-top: -40px;
+    border: 1px solid red; 
 }
 
 .ProjectBold {
   color: white;
+  margin: auto;
+  width: fit-content;
   text-transform: uppercase;
   padding-bottom: 0;
   font-size:medium;
   font-weight: 900;
   font-family: "Helvetica Roman";
+  border: 1px solid red; 
 }
 
 .Video {
@@ -48,6 +54,7 @@
 }
 
 .TitleVideo {
+  align-content: center;
   overflow: hidden;
   position: absolute;
   margin-top: -163px; /* -17vh*/
@@ -68,4 +75,5 @@
   display: block;
   box-sizing: border-box;
   background-color: black;
+  align-content: center;
 }

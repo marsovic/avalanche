@@ -20,6 +20,8 @@
     text-transform: uppercase;
     font-size:small;
     font-weight: 400;
+    width: fit-content;
+    margin: auto;
     font-family: "Helvetica Roman";
     margin-top: -40px;
 }
@@ -30,6 +32,8 @@
   padding-bottom: 0;
   font-size:medium;
   font-weight: 900;
+  width: fit-content;
+  margin: auto;
   font-family: "Helvetica Roman";
 }
 
