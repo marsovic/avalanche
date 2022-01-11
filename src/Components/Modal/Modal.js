@@ -31,13 +31,13 @@ class Modal extends Component {
                 toShow= (
                     <div>
                         <div className={styles.Link} onClick={this.workClicked}>
-                            WORK
+                         <p className={styles.MainLink} >WORK </p>
                         </div>
                         <NavLink className={styles.Link} to="/about">
-                            ABOUT
+                        <p className={styles.MainLink} >ABOUT </p>
                         </NavLink>
                         <NavLink className={styles.Link} id="bottom" to="/contact">
-                            CONTACT
+                        <p className={styles.MainLink} >CONTACT</p>
                         </NavLink>
                         <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
                             <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
@@ -63,16 +63,16 @@ class Modal extends Component {
                 toShow= (
                     <div>
                         <div className={styles.Link} onClick={this.workClicked}>
-                            ACTIVITES
+                        <p className={styles.MainLink} >ACTIVITES </p>
                         </div>
                         <NavLink className={styles.Link} to="/about">
-                            A PROPOS
+                        <p className={styles.MainLink} >A PROPOS </p>
                         </NavLink>
                         <NavLink className={styles.Link} id="bottom" to="/contact">
-                            CONTACT
+                        <p className={styles.MainLink} >CONTACT </p>
                         </NavLink>
                         <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
-                            <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
+                            <p className={styles.MainLink} style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
                         </NavLink>
                     </div>
                 )

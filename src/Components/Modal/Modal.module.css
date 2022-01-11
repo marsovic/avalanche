@@ -45,6 +45,8 @@
 
   .Link p {
       width: fit-content;
+      text-decoration: none;
+      color: white;
   }
   
   ul {
@@ -85,4 +87,6 @@
     padding-top: 1vh;
   }
 
-  
+  #Navlink:hover {
+    color: white;
+  }

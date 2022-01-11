@@ -75,7 +75,7 @@ class News extends Component {
                             var temp = null;
                             if(this.props.title === this.state.projects[key].title) {
                                 temp = (
-                                    <div >
+                                    <li >
                                         <p
                                             className={styles.ProjectBold}
                                             id={key+1}
@@ -85,11 +85,11 @@ class News extends Component {
                                             value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
                                             {this.state.projects[key].author} - {this.state.projects[key].title}
                                         </p>
-                                    </div>
+                                    </li>
                                 )
                             } else {
                                 temp = (
-                                    <div >
+                                    <li >
                                         <p
                                             className={styles.Project}
                                             id={key+1}
@@ -99,7 +99,7 @@ class News extends Component {
                                             value={[this.state.projects[key].video, this.state.projects[key].teaser]}>
                                             {this.state.projects[key].author} - {this.state.projects[key].title}
                                         </p>
-                                    </div>
+                                    </li>
                                 )
                             }
                             
@@ -114,9 +114,9 @@ class News extends Component {
                 <p className={styles.Title}>
                     News
                 </p>
-                <div className={styles.listStyle}>
+                <ul className={styles.listStyle}>
                     {toShow}
-                </div>
+                </ul>
             </div>
         );
     }
