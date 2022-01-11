@@ -41,9 +41,9 @@ class Navigation extends Component {
                             </NavLink>
                         </Col>
                         <Col md={{ span: 1, offset: 0 }} >
-                            <NavLink className={styles.LinkLang} style={{marginTop:"6vh",marginLeft:"2vw",border: "2px solid white", marginRight:"4vw", padding:"2px", alignItems:"center", fontSize: 'small', textTransform: "uppercase"}} onClick={this.props.handleLang} to="/">
-                                {lang}
-                            </NavLink>
+                        <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "1.5px solid white", marginRight: "4vw", paddingLeft: "2px", paddingTop:"0px", paddingBottom:"0px",margingBottom:"0px", paddingRight:"2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="#">
+                            {lang}
+                        </NavLink>
                         </Col>
                     </Row>
                 </Container>
@@ -82,9 +82,9 @@ class Navigation extends Component {
                         </NavLink>
                     </Col>
                     <Col md={{ span: 1, offset: 0 }} >
-                        <NavLink className={styles.LinkLang} style={{marginTop:"6vh",marginLeft:"2vw",border: "2px solid white", marginRight:"4vw", padding:"2px", alignItems:"center", fontSize: 'small', textTransform: "uppercase"}} onClick={this.props.handleLang} to="/">
+                    <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "1.5px solid white", marginRight: "4vw", paddingLeft: "2px", paddingTop:"0px", paddingBottom:"0px",margingBottom:"0px", paddingRight:"2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="#">
                             {lang}
-                        </NavLink>
+                    </NavLink>
                     </Col>
                 </Row>
             </Container>

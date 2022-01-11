@@ -39,14 +39,20 @@
 
 .LinkLang {
   float: right;
-  /* padding-left: 1%;
-  padding-right: 2%; */
+  
   font-family: "Monument Extended Regular";
   color: white;
   font-size: larger;
   text-decoration: none;
   padding-top: 6vh;
 }
+
+.LinkLang:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
 .Link:hover {
   color: white;
   text-decoration: none;
