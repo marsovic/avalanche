@@ -21,7 +21,7 @@ class Navigation extends Component {
                             </NavLink>
                         </Col>
 
-                        <Col md={{ span: 4, offset: 7 }} className={styles.Col}>
+                        <Col md={{ span: 5, offset: 6 }} className={styles.Col}>
                             <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "1.5px solid white", marginRight: "4vw", paddingLeft: "2px", paddingTop:"0px", paddingBottom:"0px",margingBottom:"0px", paddingRight:"2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
                                 {lang}
                             </NavLink>
@@ -57,7 +57,7 @@ class Navigation extends Component {
                             </NavLink>
                         </Col>
 
-                        <Col md={{ span: 4, offset: 7 }} className={styles.Col}>
+                        <Col md={{ span: 5, offset: 6 }} className={styles.Col}>
                             <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "1.5px solid white", marginRight: "4vw", paddingLeft: "2px", paddingTop:"0px", paddingBottom:"0px",margingBottom:"0px", paddingRight:"2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
                                 {lang}
                             </NavLink>
