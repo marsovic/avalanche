@@ -33,8 +33,8 @@ class Modal extends Component {
                         <div className={styles.Link} onClick={this.workClicked}>
                             WORK
                         </div>
-                        <NavLink className={styles.Link} to="/about">
-                            ABOUT/<br/>CONTACT
+                        <NavLink className={styles.Link} style={{marginLeft:"0px", paddingLeft:"0px"}} to="/about">
+                            <p className={styles.MainLink}>ABOUT/<br/>CONTACT</p>
                         </NavLink>
                         <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
                             <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
@@ -62,8 +62,8 @@ class Modal extends Component {
                         <div className={styles.Link} onClick={this.workClicked}>
                             ACTIVITES
                         </div>
-                        <NavLink className={styles.Link} to="/about">
-                            A PROPOS/<br/>CONTACT
+                        <NavLink className={styles.Link} style={{marginLeft:"0px", paddingLeft:"0px"}}  to="/about">
+                            <p>A PROPOS/<br/>CONTACT</p>
                         </NavLink>
                         <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
                             <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>

@@ -119,7 +119,8 @@ class Main extends Component {
         if (this.props.select === "about" || this.props.select === "contact") {
             this.setState({
                 load: false,
-                lang: lng
+                lang: lng,
+                teaser:"aaa"
             })
         }
 

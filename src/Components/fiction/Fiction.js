@@ -8,7 +8,6 @@ class Fiction extends Component {
         projects: null,
         rerender: false,
         loading: true,
-        showed: false,
         title: null
     };
 
@@ -72,14 +71,13 @@ class Fiction extends Component {
                         return [...Array(this.state.projects[key])].map((_, i) => {
                             if (this.props.lang === "fr") {
                                 if (this.state.projects[key].title === this.state.title) {
-                                    if (this.state.showed) {
                                         return (
                                             <li >
                                                 <p
                                                     className={styles.ProjectFictionTitle}
                                                     id={key + 1}
                                                     key={key + 3}
-                                                    style={{ fontWeight: "900", color: "white" }}
+                                                    style={{ fontWeight: "600", color: "white" }}
                                                     onMouseUp={this.props.clickVideo}
                                                     video={this.state.projects[key].video}
                                                     value={this.state.projects[key].video}>
@@ -103,23 +101,6 @@ class Fiction extends Component {
                                                 </p>
                                             </li>
                                         )
-                                    } else {
-                                        return (
-                                            <li >
-                                                <p
-                                                    className={styles.ProjectFictionTitle}
-                                                    id={key + 1}
-                                                    key={key + 3}
-                                                    style={{ fontWeight: "900", color: "white" }}
-                                                    onMouseUp={this.props.clickVideo}
-                                                    onMouseEnter={this.showUnderText}
-                                                    video={this.state.projects[key].video}
-                                                    value={[this.state.projects[key].title, this.state.projects[key].teaser]}>
-                                                    {this.state.projects[key].title}
-                                                </p>
-                                            </li>
-                                        )
-                                    }
                                 } else {
                                     return (
                                         <li className={styles.ProjectFictionTitle}>
@@ -136,14 +117,13 @@ class Fiction extends Component {
                                 }
                             } else {
                                 if (this.state.projects[key].title === this.state.title) {
-                                    if (this.state.showed) {
                                         return (
                                             <li >
                                                 <p
                                                     className={styles.ProjectFictionTitle}
                                                     id={key + 1}
                                                     key={key + 3}
-                                                    style={{ fontWeight: "900", color: "white" }}
+                                                    style={{ fontWeight: "600", color: "white" }}
                                                     onMouseUp={this.props.clickVideo}
                                                     video={this.state.projects[key].video}
                                                     value={this.state.projects[key].video}>
@@ -167,23 +147,7 @@ class Fiction extends Component {
                                                 </p>
                                             </li>
                                         )
-                                    } else {
-                                        return (
-                                            <li >
-                                                <p
-                                                    className={styles.ProjectFictionTitle}
-                                                    id={key + 1}
-                                                    key={key + 3}
-                                                    style={{ fontWeight: "900", color: "white" }}
-                                                    onMouseUp={this.props.clickVideo}
-                                                    onMouseEnter={this.showUnderText}
-                                                    video={this.state.projects[key].video}
-                                                    value={this.state.projects[key].video}>
-                                                    {this.state.projects[key].title}
-                                                </p>
-                                            </li>
-                                        )
-                                    }
+                                    
                                 } else {
                                     return (
                                         <li className={styles.ProjectFictionTitle}>

@@ -10,6 +10,7 @@
   /*align-items: end;*/
 }
 
+
 .Logo {
   height: 9vh;
   margin-top: 2vh;
@@ -48,6 +49,12 @@
   text-decoration: none;
   padding-top: 6vh;
 }
+
+.LinkLang:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .Link:hover {
   color: white;
   text-decoration: none;
@@ -89,8 +96,6 @@ ul {
 .Dropdown {
   text-decoration: none;
   float: right;
-  /*padding-left: 50px;
-  padding-right: 50px; */
   padding-top: 6vh;
   font-size: larger;
   font-family: "Monument Extended Regular";
@@ -133,7 +138,7 @@ ul {
   color: white;
   font-family: "Monument Extended Ultrabold";
   text-transform: uppercase;
-  font-size: 3vh;
+  font-size: 2.3vh;
   max-width: auto;
 }
 

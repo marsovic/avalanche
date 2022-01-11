@@ -21,24 +21,22 @@ class Navigation extends Component {
                             </NavLink>
                         </Col>
 
-                        <Col md={{ span: 1, offset: 7 }} className={styles.Col}>
-                            <NavLink className={styles.Dropdown} to="#">
+                        <Col md={{ span: 4, offset: 7 }} className={styles.Col}>
+                            <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "1.5px solid white", marginRight: "4vw", paddingLeft: "2px", paddingTop:"0px", paddingBottom:"0px",margingBottom:"0px", paddingRight:"2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
+                                {lang}
+                            </NavLink>
+
+                            <NavLink className={styles.Link} style={{marginLeft:"50px", marginRight:"10px"}} to="/about">
+                                ABOUT/CONTACT
+                            </NavLink>
+
+                            <NavLink className={styles.Dropdown}to="#">
                                 WORK
                                 <div className={styles.DropdownContent}>
                                     <NavLink to="/video">MUSIC VIDEO</NavLink>
                                     <NavLink to="/advertising">ADVERTISING</NavLink>
                                     <NavLink to="/fiction">FICTION</NavLink>
                                 </div>
-                            </NavLink>
-                        </Col>
-                        <Col md={{ span: 1, offset: 1 }} className={styles.Col} to="/about">
-                            <NavLink className={styles.Link} to="/about">
-                                ABOUT/CONTACT
-                            </NavLink>
-                        </Col>
-                        <Col md={{ span: 1, offset: 0 }} >
-                            <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "2px solid white", marginRight: "4vw", padding: "2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
-                                {lang}
                             </NavLink>
                         </Col>
                     </Row>
@@ -59,24 +57,22 @@ class Navigation extends Component {
                             </NavLink>
                         </Col>
 
-                        <Col md={{ span: 1, offset: 7 }} className={styles.Col}>
-                            <NavLink className={styles.Dropdown} to="#">
+                        <Col md={{ span: 4, offset: 7 }} className={styles.Col}>
+                            <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "1.5px solid white", marginRight: "4vw", paddingLeft: "2px", paddingTop:"0px", paddingBottom:"0px",margingBottom:"0px", paddingRight:"2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
+                                {lang}
+                            </NavLink>
+
+                            <NavLink className={styles.Link} style={{marginLeft:"50px", marginRight:"10px"}} to="/about">
+                                A PROPOS/CONTACT
+                            </NavLink>
+
+                            <NavLink className={styles.Dropdown}to="#">
                                 ACTIVITES
                                 <div className={styles.DropdownContent}>
                                     <NavLink to="/video">VIDEOS CLIPS</NavLink>
                                     <NavLink to="/advertising">PUBLICITES</NavLink>
                                     <NavLink to="/fiction">FICTION</NavLink>
                                 </div>
-                            </NavLink>
-                        </Col>
-                        <Col md={{ span: 1, offset: 1 }} className={styles.Col} to="/about">
-                            <NavLink className={styles.Link} to="/about">
-                                A PROPOS/CONTACT
-                            </NavLink>
-                        </Col>
-                        <Col md={{ span: 1, offset: 0 }} >
-                            <NavLink className={styles.LinkLang} style={{ marginTop: "6vh", marginLeft: "2vw", border: "2px solid white", marginRight: "4vw", padding: "2px", alignItems: "center", fontSize: 'small', textTransform: "uppercase" }} onClick={this.props.handleLang} to="/">
-                                {lang}
                             </NavLink>
                         </Col>
                     </Row>
