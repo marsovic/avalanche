@@ -7,7 +7,6 @@ import Video from "../../Components/MobileVideo/Video"
 import About from "../../Components/MobileAbout/About"
 import News from "../MobileNews/News"
 import Fiction from "../../Components/MobileFiction/Fiction";
-import Contact from "../../Components/MobileContact/Contact";
 import logoAvalanche from "../../assets/Images/logo.png"
 
 import styles from "./MobileMain.module.css"
@@ -24,11 +23,12 @@ class MobileMain extends Component {
     }
 
     setVideo = (event) => {
+        event.stopPropagation();
         sessionStorage.setItem("selected", "a")
         if (event.currentTarget.dataset.video) { 
             const selectedVideo = event.currentTarget.dataset.video
             if (selectedVideo !== undefined) {
-                this.setState({ video: selectedVideo, selected: true })
+                this.setState({ video: selectedVideo, selected: true})
             }
         }
         event.stopPropagation()
@@ -45,7 +45,8 @@ class MobileMain extends Component {
 
     handleBack = (event) => {
         sessionStorage.setItem("selected", "b")
-        this.setState({ selected: false })
+        event.stopPropagation();
+        this.setState({ selected: false, video: null})
     }
 
     handleLang = (event) => {
@@ -108,6 +109,7 @@ class MobileMain extends Component {
             }
 
             if (this.props.select === "work") {
+
                 axios
                     .get(urlVideo, options)
                     .then(res => {
@@ -208,12 +210,17 @@ class MobileMain extends Component {
 
         if (this.state.load) {
             finalShow = (
-                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />)
+                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
+            )
         } else {
             if (this.props.select === "work") {
                 toShow = (
                     <div className={styles.Main}>
-                        <News setVideo={this.setVideo} clickVideo={this.clickVideo} title={this.state.title}/>
+                        <News 
+                            setVideo={this.setVideo} 
+                            clickVideo={this.clickVideo} 
+                            title={this.state.title} 
+                        />
                     </div>
                 )
             }
@@ -222,16 +229,6 @@ class MobileMain extends Component {
                 toShow = (
                     <div>
                         <About
-                            lang={this.state.lang}
-                        />
-                    </div>
-                )
-            }
-
-            if (this.props.select === "contact") {
-                toShow = (
-                    <div>
-                        <Contact
                             lang={this.state.lang}
                         />
                     </div>
@@ -290,9 +287,6 @@ class MobileMain extends Component {
                                     handleLang={this.handleLang}
                                 />
                                 {toShow}
-                            </div>
-                            <div className={styles.mobile}>
-
                             </div>
                         </div>
                     )
