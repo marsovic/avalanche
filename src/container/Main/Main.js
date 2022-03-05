@@ -10,6 +10,7 @@ import News from "../News/News"
 import Fiction from "../../Components/fiction/Fiction";
 import Contact from "../../Components/Contact/Contact";
 import logoAvalanche from "../../assets/Images/logo.png"
+
 import styles from "./Main.module.css"
 import OverWindow from "../../Components/OverWindow/OverWindow";
 
@@ -21,7 +22,7 @@ class Main extends Component {
         volume: 0,
         lang: null,
         selected: false,
-        load: true
+        load: false
     }
 
     setVideo = (event) => {
@@ -32,7 +33,7 @@ class Main extends Component {
             }
             document.getElementById(event._targetInst.key).className = styles.Bold
             const selectedVideo = event._targetInst.memoizedProps.value[1]
-            if (selectedVideo !== this.state.teaser && selectedVideo !== undefined) {
+            if (selectedVideo !== this.state.teaser && selectedVideo !== null && selectedVideo !== undefined) {
                 this.setState({ teaser: selectedVideo, play: false, video: event._targetInst.memoizedProps.value[0] })
             }
         }
@@ -54,7 +55,6 @@ class Main extends Component {
     }
 
     clickedBackground = (e) => {
-        console.log(e.target.attributes)
         this.setState({
             video: e.target.attributes["value"].value,
             play: false,
@@ -119,7 +119,8 @@ class Main extends Component {
         if (this.props.select === "about" || this.props.select === "contact") {
             this.setState({
                 load: false,
-                lang: lng
+                lang: lng,
+                teaser:"aaa"
             })
         }
 
@@ -139,6 +140,7 @@ class Main extends Component {
                                     return -1
                                 }
                             });
+                            
                             this.setState({
                                 title: projects[0].title,
                                 teaser: projects[0].teaser,
@@ -204,6 +206,7 @@ class Main extends Component {
                             return -1
                         }
                     });
+
                     this.setState({
                         title: projects[0].title,
                         teaser: projects[0].teaser,
@@ -256,12 +259,12 @@ class Main extends Component {
         var toShow = null;
         var finalShow = null;
 
-        if (this.state.load === true) {
+        if (this.state.load === true || this.state.teaser === null || this.state.teaser === undefined) {
             finalShow = (
-                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />)
+                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"}/>
+            )
         } else {
             if (this.props.select === "work") {
-
                 if (window.innerWidth / window.innerHeight > 16 / 9) {
                     toShow = (
                         <div>
@@ -297,6 +300,7 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
+                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
@@ -376,6 +380,7 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
+                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
@@ -436,6 +441,7 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
+                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
@@ -455,6 +461,7 @@ class Main extends Component {
             }
 
             if (this.props.select === "advertising") {
+
                 if (window.innerWidth / window.innerHeight > 16 / 9) {
                     toShow = (
                         <div>
@@ -490,6 +497,7 @@ class Main extends Component {
                                     controls={false}
                                     onLoaded={this.startVideo}
                                     height={window.innerHeight}
+                                    // width={window.innerWidth}
                                     showPortrait={!this.state.play}
                                     paused={!this.state.play}
                                     muted={true}
