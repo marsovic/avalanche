@@ -1,9 +1,9 @@
 {
-  "short_name": "Avalanche",
-  "name": "Avalance work",
+  "short_name": "Thibault Cadentem",
+  "name": "Thibault Cadentem",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
