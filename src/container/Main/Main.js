@@ -140,6 +140,9 @@ class Main extends Component {
                                     return -1
                                 }
                             });
+
+                            console.log(projects)
+                            
                             this.setState({
                                 title: projects[0].title,
                                 teaser: projects[0].teaser,
@@ -205,6 +208,9 @@ class Main extends Component {
                             return -1
                         }
                     });
+
+                    console.log(projects)
+
                     this.setState({
                         title: projects[0].title,
                         teaser: projects[0].teaser,
@@ -257,11 +263,10 @@ class Main extends Component {
         var toShow = null;
         var finalShow = null;
 
-        if (this.state.load === true || this.state.teaser === null || this.state.teaser === undefined ) {
+        if (this.state.load === true || this.state.teaser === null || this.state.teaser === undefined) {
             finalShow = (
-                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"} />
+                <img className={styles.Logo} src={logoAvalanche} alt={"Avalanche"}/>
             )
-
         } else {
             if (this.props.select === "work") {
                 if (window.innerWidth / window.innerHeight > 16 / 9) {

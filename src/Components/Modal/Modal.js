@@ -31,10 +31,10 @@ class Modal extends Component {
                 toShow= (
                     <div>
                         <div className={styles.Link} onClick={this.workClicked}>
-                            WORK
+                            <p className={styles.Link} style={{width:"fit-content", margin:"0px", padding:"0px"}}>WORK</p>
                         </div>
                         <NavLink className={styles.Link} style={{marginLeft:"0px", paddingLeft:"0px"}} to="/about">
-                            <p className={styles.MainLink}>ABOUT/<br/>CONTACT</p>
+                            <p className={styles.Link}>ABOUT/<br/>CONTACT</p>
                         </NavLink>
                         <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
                             <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
@@ -60,10 +60,10 @@ class Modal extends Component {
                 toShow= (
                     <div>
                         <div className={styles.Link} onClick={this.workClicked}>
-                            ACTIVITES
+                        <p className={styles.Link} style={{width:"fit-content", margin:"0px", padding:"0px"}}> ACTIVITES </p>
                         </div>
                         <NavLink className={styles.Link} style={{marginLeft:"0px", paddingLeft:"0px"}}  to="/about">
-                            <p>A PROPOS/<br/>CONTACT</p>
+                            <p className={styles.Link}>A PROPOS/<br/>CONTACT</p>
                         </NavLink>
                         <NavLink className={styles.Link} onClick={this.props.onClickLang} to="/">
                             <p style={{position:"relative", border: "2px solid white", padding:"2px", alignItems:"center",fontSize: 'small', textTransform: "uppercase"}} >{lang} </p>
